@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* paper + ink — warm neutral backbone, not pure white */
+    --paper: 40 30% 98.5%;
+    --cream: 38 40% 96%;
+
+    --background: 40 30% 98.5%;
+    --foreground: 222 30% 14%;
+
+    --ink: 222 30% 14%;
+    --ink-muted: 222 15% 32%;
+    --ink-subtle: 222 10% 48%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 30% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 30% 14%;
+
+    /* primary: a calm, slightly desaturated navy-blue that feels institutional */
+    --primary: 222 70% 24%;
+    --primary-foreground: 40 30% 98.5%;
+
+    --secondary: 222 14% 95%;
+    --secondary-foreground: 222 30% 14%;
+
+    --muted: 220 16% 94%;
+    --muted-foreground: 222 10% 44%;
+
+    --accent: 214 100% 96%;
+    --accent-foreground: 222 70% 24%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 40 30% 98.5%;
+
+    --border: 220 14% 88%;
+    --input: 220 14% 88%;
+    --ring: 222 70% 32%;
+
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image:
+      radial-gradient(circle at 1px 1px, hsl(222 30% 14% / 0.035) 1px, transparent 0);
+    background-size: 28px 28px;
+    background-attachment: fixed;
+  }
+
+  /* editorial serif for display usage */
+  .font-serif {
+    font-feature-settings: "ss01";
+    letter-spacing: -0.015em;
+  }
+
+  /* subtle table-lining numerals for financial data */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background: hsl(222 70% 24% / 0.15);
+    color: hsl(222 30% 14%);
+  }
+}
+
+@layer components {
+  .card-surface {
+    background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 30% 99%) 100%);
+  }
+
+  .ornament-rule {
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--border)) 0,
+      hsl(var(--border)) 3px,
+      transparent 3px,
+      transparent 8px
+    );
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+  }
+
+  .stream-log {
+    font-family: var(--font-jetbrains), ui-monospace, monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .xml-preview {
+    font-family: var(--font-jetbrains), ui-monospace, monospace;
+    font-size: 12.5px;
+    line-height: 1.65;
+    tab-size: 2;
+  }
+
+  .gradient-number {
+    background: linear-gradient(180deg, hsl(222 30% 14%) 0%, hsl(222 40% 26%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .soft-glow-primary {
+    box-shadow:
+      0 1px 0 hsl(222 70% 16%) inset,
+      0 10px 30px -12px hsl(222 70% 24% / 0.4);
+  }
+
+  .noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+}
+
+/* scrollbar polish for the log stream and XML preview */
+.slim-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.slim-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slim-scroll::-webkit-scrollbar-thumb {
+  background: hsl(220 14% 80%);
+  border-radius: 4px;
+}
+.slim-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(220 14% 68%);
+}
