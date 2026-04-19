@@ -100,8 +100,8 @@ export default function SummaryPage() {
       <StepHeader
         step={8}
         eyebrow="Rezumat"
-        title="Închiderea martie 2026 — completă."
-        lede="47 clienți, 1.247 documente, 12 declarații. Închis în 2 ore și 14 minute, față de 3–5 zile de lucru manual."
+        title="Închiderea lunii martie 2026 — gata."
+        lede="47 de clienți, 1.247 de documente, 12 declarații. Închis în 2 ore și 14 minute, față de 3–5 zile de lucru manual."
       />
 
       {/* BIG STATS */}
@@ -136,10 +136,10 @@ export default function SummaryPage() {
         <div className="flex items-center justify-between border-b border-border/70 px-5 py-4">
           <div>
             <div className="font-serif text-[17px] font-medium tracking-tight text-ink">
-              Timeline închidere · 27 aprilie 2026
+              Cronologia închiderii · 27 aprilie 2026
             </div>
             <div className="text-[11.5px] text-ink-subtle">
-              De la Maria ajunge la birou până trimite ultima declarație
+              De când Maria ajunge la birou până la ultima declarație depusă
             </div>
           </div>
           <Badge variant="blue" className="gap-1.5">

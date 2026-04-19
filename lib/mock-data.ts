@@ -678,11 +678,11 @@ export const declarations: Declaration[] = [
     fullName: "SAF-T — fișier standard de audit fiscal",
     shortName: "SAF-T D406",
     clientCount: 15,
-    status: "15 clienți small — obligatoriu din ianuarie 2025",
+    status: "15 clienți mici — obligatoriu din ianuarie 2025",
     statusVariant: "amber",
     dueDate: "2026-04-30",
     ctaLabel: "Deschide cockpit SAF-T",
-    description: "15 clienți small · 390 câmpuri per depunere",
+    description: "15 clienți mici · 390 câmpuri per depunere",
   },
 ];
 
@@ -712,11 +712,11 @@ export interface TimelineStep {
 }
 
 export const summaryTimeline: TimelineStep[] = [
-  { time: "09:14", label: "Pull SPV automat (47 clienți)" },
-  { time: "09:47", label: "Review și categorizare (7 documente ambigue)" },
+  { time: "09:14", label: "Preluare automată SPV (47 de clienți)" },
+  { time: "09:47", label: "Revizuire și categorizare (7 documente ambigue)" },
   { time: "10:22", label: "Export Saga generat" },
   { time: "11:08", label: "Declarațiile D112, D300, D394 depuse" },
-  { time: "11:28", label: "SAF-T D406 depus pentru 15 clienți small" },
+  { time: "11:28", label: "SAF-T D406 depus pentru 15 clienți mici" },
 ];
 
 export interface ComparisonRow {
@@ -726,13 +726,13 @@ export interface ComparisonRow {
 }
 
 export const comparisonRows: ComparisonRow[] = [
-  { step: "Preluare e-Factura SPV", without: "Manual pe fiecare client, 4h", withCF: "Automat, 30s" },
-  { step: "Colectare documente clienți", without: "Chase pe WhatsApp, 6h", withCF: "Reminder automat, 2min" },
+  { step: "Preluare e-Factura din SPV", without: "Manual pentru fiecare client, 4h", withCF: "Automat, 30s" },
+  { step: "Colectare documente de la clienți", without: "Alergi după ei pe WhatsApp, 6h", withCF: "Memento automat, 2min" },
   { step: "OCR și introducere în Saga", without: "Manual, 8h", withCF: "Automat, 5min" },
-  { step: "Categorizare contabilă", without: "Manual one-by-one, 6h", withCF: "Auto + review 7 ambigue, 15min" },
+  { step: "Categorizare contabilă", without: "Manual, document cu document, 6h", withCF: "Auto + verificare 7 ambigue, 15min" },
   { step: "Potrivire cu e-Factura", without: "Manual, 3h", withCF: "Automat 89%, 2min" },
   { step: "Generare declarații D112/D300/D394", without: "Manual în DUK, 4h", withCF: "Pre-completat, 1 click" },
-  { step: "SAF-T D406 (15 clienți small)", without: "2–3h per client, 30h+", withCF: "4min per client, 1h" },
+  { step: "SAF-T D406 (15 clienți mici)", without: "2–3h per client, 30h+", withCF: "4min per client, 1h" },
   { step: "Depunere SPV + recipise", without: "Manual, 2h", withCF: "Automat, 30s" },
 ];
 

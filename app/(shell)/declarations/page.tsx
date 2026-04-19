@@ -218,12 +218,12 @@ export default function DeclarationsPage() {
               <div className="rounded-lg bg-sky-50 p-3 text-[12px] text-sky-900">
                 <div className="flex items-center gap-1.5 font-medium">
                   <BadgeCheck className="h-3.5 w-3.5" />
-                  Ce se întâmplă la click „Depune acum"
+                  Ce se întâmplă când apeși „Depune acum"
                 </div>
                 <ul className="mt-1.5 space-y-0.5 pl-5 text-sky-800 list-disc">
                   <li>Transmitere semnată digital la SPV ANAF pentru fiecare CUI</li>
                   <li>Număr de înregistrare (recipisă) salvat automat pe fișa clientului</li>
-                  <li>Notificare email automată pentru clienți care au optat</li>
+                  <li>Notificare pe email pentru clienții care au optat</li>
                 </ul>
               </div>
 

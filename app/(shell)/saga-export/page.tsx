@@ -255,7 +255,7 @@ export default function SagaExportPage() {
               Istoric export
             </div>
             <p className="mt-2 text-[12px] leading-relaxed text-ink-muted">
-              Fiecare fișier generat rămâne versiuni-ate în storage. Dacă trebuie să regenerezi un
+              Fiecare fișier generat rămâne versionat în istoric. Dacă trebuie să regenerezi un
               export pentru februarie 2026 — un click.
             </p>
           </div>
@@ -272,7 +272,7 @@ export default function SagaExportPage() {
                 preview · {format === "SmartBill Conta" ? "payload.json" : "export.xml"}
               </span>
             </div>
-            <span className="font-mono text-[10.5px] text-white/40">primele 30 linii</span>
+            <span className="font-mono text-[10.5px] text-white/40">primele 30 de linii</span>
           </div>
 
           {/* FORMAT TOGGLE */}

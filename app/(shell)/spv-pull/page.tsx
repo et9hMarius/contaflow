@@ -82,7 +82,7 @@ export default function SpvPullPage() {
         step={3}
         eyebrow="SPV · e-Factura"
         title="Preluare automată e-Factura din SPV"
-        lede="ContaFlow se conectează zilnic la SPV pentru fiecare client și descarcă toate facturile B2B. ANAF păstrează datele doar 60 de zile — noi le arhivăm permanent, indexat și căutabil."
+        lede="ContaFlow se conectează zilnic la SPV pentru fiecare client și descarcă toate facturile B2B. ANAF păstrează datele doar 60 de zile — noi le arhivăm permanent, indexate și căutabile."
       />
 
       {/* Feature strip */}
@@ -90,12 +90,12 @@ export default function SpvPullPage() {
         <FeaturePill
           icon={<Lock className="h-4 w-4" />}
           title="Certificat digital calificat"
-          desc="Autentificare cu token USB — un singur setup, pull automat pentru toți clienții"
+          desc="Autentificare cu token USB — un singur setup, preluare automată pentru toți clienții"
         />
         <FeaturePill
           icon={<ShieldCheck className="h-4 w-4" />}
-          title="GDPR-compliant, EU region"
-          desc="Storage criptat AES-256, în regiunea Frankfurt — audit trail complet"
+          title="Conform GDPR, găzduit în UE"
+          desc="Stocare criptată AES-256 în regiunea Frankfurt — jurnal de audit complet"
         />
         <FeaturePill
           icon={<CalendarClock className="h-4 w-4" />}
@@ -135,7 +135,7 @@ export default function SpvPullPage() {
           </div>
           <div className="flex items-center gap-3">
             <label className="flex cursor-pointer items-center gap-2 text-[11.5px] text-white/70">
-              <span className="hidden sm:inline">Pull automat zilnic 06:00</span>
+              <span className="hidden sm:inline">Preluare automată zilnic la 06:00</span>
               <button
                 type="button"
                 onClick={() => setScheduleOn((v) => !v)}
@@ -238,7 +238,7 @@ export default function SpvPullPage() {
               <BigStat
                 icon={<FileCheck2 className="h-3.5 w-3.5" />}
                 value="14"
-                label="documente necesită review manual"
+                label="documente necesită verificare manuală"
                 accent="amber"
               />
             </div>

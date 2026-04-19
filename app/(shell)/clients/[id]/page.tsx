@@ -239,7 +239,7 @@ export default function ClientDetailPage({ params }: { params: { id: string } })
                     Documente lipsă detectate
                   </div>
                   <div className="text-[11px] text-ink-subtle">
-                    Diff între SPV e-Factura & docs primite
+                    Diferență între e-Factura din SPV și documentele primite
                   </div>
                 </div>
                 <ul className="divide-y divide-border/70">

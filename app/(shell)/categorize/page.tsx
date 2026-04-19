@@ -205,7 +205,7 @@ export default function CategorizePage() {
             <div className="flex items-center justify-between border-b border-border/70 px-5 py-3">
               <div>
                 <div className="font-serif text-[15px] font-medium text-ink">
-                  Auto-categorizate · confidence ≥ 80%
+                  Auto-categorizate · grad de încredere ≥ 80%
                 </div>
                 <div className="text-[11px] text-ink-subtle">
                   ContaFlow le-a categorizat, tu le poți audita în orice moment
@@ -213,7 +213,7 @@ export default function CategorizePage() {
               </div>
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm">
-                  Marchează pentru re-review
+                  Marchează pentru re-verificare
                 </Button>
                 <Button size="sm" asChild className="bg-[hsl(222_70%_18%)] hover:bg-[hsl(222_75%_22%)]">
                   <Link href="/saga-export">

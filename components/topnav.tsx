@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ChevronDown, LifeBuoy, LogOut, RefreshCw, Search } from "lucide-react";
+import { ChevronDown, Home, LifeBuoy, LogOut, RefreshCw, Search } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { DemoPill } from "@/components/demo-pill";
@@ -22,6 +22,11 @@ export function TopNav() {
   const { dispatch } = useDemo();
 
   const onReset = () => {
+    dispatch({ type: "RESET" });
+    router.push("/demo");
+  };
+
+  const onBackToSite = () => {
     dispatch({ type: "RESET" });
     router.push("/");
   };
@@ -69,6 +74,10 @@ export function TopNav() {
             <DropdownMenuItem onSelect={onReset} className="text-amber-800 focus:text-amber-900">
               <RefreshCw className="h-4 w-4" />
               Restart demo
+            </DropdownMenuItem>
+            <DropdownMenuItem onSelect={onBackToSite}>
+              <Home className="h-4 w-4" />
+              Înapoi la contaflow.ro
             </DropdownMenuItem>
             <DropdownMenuItem>
               <LogOut className="h-4 w-4" />

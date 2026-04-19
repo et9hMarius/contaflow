@@ -106,7 +106,7 @@ export default function SaftPage() {
         step={7}
         eyebrow="SAF-T · cockpit dedicat"
         title="SAF-T D406 — martie 2026"
-        lede="15 clienți small intră sub obligativitatea D406 din ianuarie 2025. 390 câmpuri per depunere, validate automat contra schemei XSD oficiale ANAF, înainte de trimitere."
+        lede="15 clienți mici intră sub obligativitatea D406 din ianuarie 2025. 390 câmpuri per depunere, validate automat contra schemei XSD oficiale ANAF, înainte de trimitere."
       />
 
       {/* STATUS RIBBON */}
@@ -143,9 +143,9 @@ export default function SaftPage() {
         <div className="overflow-hidden rounded-xl border border-border/70 bg-white">
           <div className="border-b border-border/70 px-4 py-3">
             <div className="font-serif text-[14px] font-medium text-ink">
-              15 clienți small — D406
+              15 clienți mici — D406
             </div>
-            <div className="text-[11px] text-ink-subtle">Click pentru raport de validare</div>
+            <div className="text-[11px] text-ink-subtle">Apasă pentru raport de validare</div>
           </div>
           <ul className="slim-scroll max-h-[520px] divide-y divide-border/60 overflow-y-auto">
             {saftClients.map((c) => (
@@ -316,7 +316,7 @@ export default function SaftPage() {
               >
                 <div className="flex items-center gap-2 text-[12.5px] font-medium text-amber-900">
                   <AlertTriangle className="h-3.5 w-3.5" />
-                  67 avertismente StockMovements — click pentru detalii
+                  67 avertismente StockMovements — apasă pentru detalii
                 </div>
                 <ChevronDown
                   className={cn(
