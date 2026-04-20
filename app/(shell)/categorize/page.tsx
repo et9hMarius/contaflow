@@ -160,7 +160,7 @@ export default function CategorizePage() {
                     <TableHead className="w-[10%] text-right">Sumă</TableHead>
                     <TableHead className="w-[10%] text-right">TVA</TableHead>
                     <TableHead className="w-[22%]">Categorie sugerată</TableHead>
-                    <TableHead className="w-[10%]">Confidence</TableHead>
+                    <TableHead className="w-[10%]">Încredere</TableHead>
                     <TableHead className="w-[7%] text-right">Acțiuni</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -232,7 +232,7 @@ export default function CategorizePage() {
                     <TableHead>Furnizor</TableHead>
                     <TableHead className="text-right">Sumă</TableHead>
                     <TableHead>Categorie</TableHead>
-                    <TableHead>Confidence</TableHead>
+                    <TableHead>Încredere</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -441,7 +441,7 @@ const CATEGORIES = [
   "Servicii comunicații — deductibil integral",
   "Consumabile medicale — deductibil integral",
   "Îngrășăminte — deductibil integral",
-  "Neclasificat — necesită review manual",
+  "Neclasificat — necesită verificare manuală",
 ];
 
 const SAMPLE_AUTO = [

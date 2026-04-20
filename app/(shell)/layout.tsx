@@ -1,9 +1,11 @@
 import { Sidebar } from "@/components/sidebar";
 import { TopNav } from "@/components/topnav";
+import { DemoMobileGate } from "@/components/demo-mobile-gate";
 
 export default function ShellLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen">
+      <DemoMobileGate />
       <Sidebar />
       <div className="lg:pl-60">
         <TopNav />

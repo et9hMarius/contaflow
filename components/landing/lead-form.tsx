@@ -89,10 +89,10 @@ export function LeadForm({
       <form
         onSubmit={onSubmit}
         className={cn(
-          "flex w-full max-w-lg items-center overflow-hidden rounded-full border p-1.5 shadow-[0_10px_30px_-18px_hsl(222_30%_14%/0.25)] transition-shadow focus-within:shadow-[0_16px_40px_-18px_hsl(222_30%_14%/0.35)]",
+          "flex w-full max-w-lg flex-col gap-2 sm:flex-row sm:items-center sm:gap-0 sm:overflow-hidden sm:rounded-full sm:border sm:p-1.5 sm:shadow-[0_10px_30px_-18px_hsl(222_30%_14%/0.25)] sm:transition-shadow sm:focus-within:shadow-[0_16px_40px_-18px_hsl(222_30%_14%/0.35)]",
           theme === "dark"
-            ? "border-white/15 bg-white/5 backdrop-blur-sm"
-            : "border-border/80 bg-white",
+            ? "sm:border-white/15 sm:bg-white/5 sm:backdrop-blur-sm"
+            : "sm:border-border/80 sm:bg-white",
           className
         )}
       >
@@ -103,8 +103,10 @@ export function LeadForm({
           onChange={(e) => setEmail(e.target.value)}
           placeholder={placeholder}
           className={cn(
-            "flex-1 bg-transparent px-4 text-[14px] outline-none placeholder:font-normal",
-            theme === "dark" ? "text-white placeholder:text-white/40" : "text-ink placeholder:text-ink-subtle"
+            "h-11 min-w-0 flex-1 rounded-full border px-4 text-[14px] outline-none placeholder:font-normal sm:h-auto sm:rounded-none sm:border-0 sm:bg-transparent sm:px-4 sm:py-0",
+            theme === "dark"
+              ? "border-white/15 bg-white/5 text-white placeholder:text-white/40"
+              : "border-border/80 bg-white text-ink placeholder:text-ink-subtle"
           )}
         />
         <Button
@@ -112,7 +114,7 @@ export function LeadForm({
           disabled={pending}
           size="lg"
           className={cn(
-            "h-11 gap-2 rounded-full px-5",
+            "h-11 w-full shrink-0 gap-2 rounded-full px-4 sm:w-auto sm:px-5",
             theme === "dark"
               ? "bg-amber-400 text-[hsl(222_30%_11%)] hover:bg-amber-300"
               : "bg-[hsl(222_70%_18%)] text-primary-foreground hover:bg-[hsl(222_75%_22%)]"
@@ -124,8 +126,8 @@ export function LeadForm({
             </>
           ) : (
             <>
-              {buttonLabel}
-              <ArrowRight className="h-4 w-4" />
+              <span className="truncate">{buttonLabel}</span>
+              <ArrowRight className="h-4 w-4 shrink-0" />
             </>
           )}
         </Button>

@@ -42,6 +42,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { LeadForm } from "@/components/landing/lead-form";
+import { FloatingContact } from "@/components/landing/floating-contact";
+import { MobileMenu } from "@/components/landing/mobile-menu";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -68,6 +70,7 @@ export default function LandingPage() {
       <FaqSection />
       <FinalCtaSection />
       <Footer />
+      <FloatingContact />
     </div>
   );
 }
@@ -112,22 +115,23 @@ function StickyNav() {
           </Link>
         </nav>
       </div>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
         <Link
           href="/demo"
-          className="hidden text-[13px] font-medium text-ink-muted transition-colors hover:text-ink sm:inline"
+          className="hidden text-[13px] font-medium text-ink-muted transition-colors hover:text-ink md:inline"
         >
           Vezi demo
         </Link>
         <a
           href="#pilot"
-          className="group inline-flex h-9 items-center gap-2 rounded-full bg-[hsl(222_70%_18%)] pl-4 pr-1.5 text-[13px] font-medium text-primary-foreground shadow-[0_6px_20px_-8px_hsl(222_70%_24%/0.5)] transition-all hover:bg-[hsl(222_75%_22%)]"
+          className="group hidden h-9 items-center gap-2 rounded-full bg-[hsl(222_70%_18%)] pl-4 pr-1.5 text-[13px] font-medium text-primary-foreground shadow-[0_6px_20px_-8px_hsl(222_70%_24%/0.5)] transition-all hover:bg-[hsl(222_75%_22%)] sm:inline-flex"
         >
           Înscrie-te în pilot
           <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
             <ArrowRight className="h-3.5 w-3.5" />
           </span>
         </a>
+        <MobileMenu links={NAV_LINKS} />
       </div>
     </header>
   );
@@ -137,7 +141,7 @@ function StickyNav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative px-6 pb-20 pt-12 lg:px-10 lg:pb-28 lg:pt-20">
+    <section id="top" className="relative px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-10 lg:pb-28 lg:pt-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10"
@@ -156,7 +160,7 @@ function Hero() {
             Beta privat · acceptăm 30 de firme
           </div>
 
-          <h1 className="mt-5 font-serif text-[46px] font-medium leading-[1.02] tracking-tight text-ink sm:text-[62px] lg:text-[68px]">
+          <h1 className="mt-5 font-serif text-[36px] font-medium leading-[1.04] tracking-tight text-ink sm:text-[52px] md:text-[62px] lg:text-[68px]">
             Închide luna în{" "}
             <span className="relative inline-block">
               <span className="relative z-10 italic">câteva ore,</span>
@@ -171,8 +175,8 @@ function Hero() {
             <strong className="font-semibold text-ink">pull SPV e-Factura</strong>,{" "}
             <strong className="font-semibold text-ink">OCR și categorizare</strong>,{" "}
             <strong className="font-semibold text-ink">export Saga</strong>, declarațiile ANAF și
-            SAF-T D406 — pentru firme de contabilitate cu{" "}
-            <strong className="font-semibold text-ink">20–150 clienți</strong>.
+            SAF-T D406 — pentru orice contabil sau firmă de contabilitate care ține registrele
+            pentru <strong className="font-semibold text-ink">20–150 clienți</strong>.
           </p>
 
           <div id="pilot" className="mt-7 space-y-3">
@@ -244,25 +248,25 @@ function HeroPreview() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative w-full min-w-0">
       <div
         aria-hidden
-        className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[radial-gradient(circle,hsl(222_70%_24%_/_0.12),transparent_70%)] blur-2xl"
+        className="pointer-events-none absolute -right-8 -top-8 hidden h-40 w-40 rounded-full bg-[radial-gradient(circle,hsl(222_70%_24%_/_0.12),transparent_70%)] blur-2xl sm:block"
       />
 
       {/* browser chrome */}
-      <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-white shadow-[0_30px_80px_-30px_hsl(222_30%_14%/0.35),0_10px_30px_-15px_hsl(222_30%_14%/0.2)]">
-        <div className="flex items-center justify-between border-b border-border/60 bg-[hsl(40_30%_98%)] px-4 py-2.5">
-          <div className="flex items-center gap-1.5">
+      <div className="relative w-full min-w-0 overflow-hidden rounded-2xl border border-border/70 bg-white shadow-[0_30px_80px_-30px_hsl(222_30%_14%/0.35),0_10px_30px_-15px_hsl(222_30%_14%/0.2)]">
+        <div className="flex items-center gap-2 border-b border-border/60 bg-[hsl(40_30%_98%)] px-3 py-2.5 sm:gap-3 sm:px-4">
+          <div className="flex shrink-0 items-center gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
             <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
           </div>
-          <div className="flex h-6 min-w-[240px] items-center justify-center gap-1.5 rounded-full bg-white px-3 font-mono text-[10.5px] text-ink-subtle ring-1 ring-border/50">
-            <Lock className="h-2.5 w-2.5" />
-            app.contaflow.ro/dashboard
+          <div className="flex h-6 min-w-0 flex-1 items-center justify-center gap-1.5 truncate rounded-full bg-white px-3 font-mono text-[10.5px] text-ink-subtle ring-1 ring-border/50 sm:flex-initial sm:min-w-[220px]">
+            <Lock className="h-2.5 w-2.5 shrink-0" />
+            <span className="truncate">app.contaflow.ro/dashboard</span>
           </div>
-          <div className="h-5 w-16" />
+          <div className="hidden h-5 w-16 shrink-0 sm:block" />
         </div>
 
         {/* app header */}
@@ -460,7 +464,7 @@ function ProblemSection() {
             A <em className="italic">5-a</em> închidere consecutivă peste weekend.
           </SectionTitle>
           <SectionLede>
-            Orice expert contabil cu peste 30 de clienți își recunoaște ritualul: 25 ale lunii se apropie,
+            Orice contabil cu peste 30 de clienți își recunoaște ritualul: 25 ale lunii se apropie,
             WhatsApp-ul sună, iar închiderea se întinde pe 3–5 zile. Nu pentru că ai fi încet —
             ci pentru că instrumentele tale nu vorbesc între ele.
           </SectionLede>
@@ -634,7 +638,7 @@ function InteractiveDemoCta() {
                 Fără demo programat. Fără apel de vânzare.
               </h2>
               <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-muted">
-                Intri pe pielea Mariei Popescu — expert contabil CECCAR cu 47 clienți și 1.247
+                Intri pe pielea Mariei Popescu — contabil cu propriul birou, 47 de clienți și 1.247
                 documente de procesat pentru martie. Parcurgi cele 8 pași ai fluxului,
                 click prin click. Te întorci înapoi cu o idee clară dacă ContaFlow te-ar ajuta
                 sau nu.
@@ -858,7 +862,7 @@ function TestimonialSection() {
                 <div>
                   <div className="text-[13.5px] font-semibold text-white">Maria Popescu</div>
                   <div className="text-[11.5px] text-white/60">
-                    Expert contabil CECCAR · beta user · 47 clienți · Cluj-Napoca
+                    Contabil, firmă proprie · beta user · 47 de clienți · Cluj-Napoca
                   </div>
                 </div>
               </div>
@@ -917,7 +921,7 @@ const PLANS = [
     highlight: false,
     features: [
       "Tot din Professional",
-      "Multi-user (juniori + senior CECCAR)",
+      "Multi-user (juniori + senior)",
       "Audit trail complet + istoric 5 ani",
       "API custom + webhook-uri",
       "Account manager dedicat",
@@ -1079,8 +1083,8 @@ const FAQ = [
     a: "Avem un cockpit dedicat — 7 secțiuni validate automat contra schemei XSD oficiale ANAF, 390 câmpuri, warning-uri structurate pentru anomalii. Durata medie per client: 4 minute, față de 2–3h manual.",
   },
   {
-    q: "Sunt CECCAR. E conform cu normele profesiei?",
-    a: "Da. ContaFlow nu înlocuiește judecata profesională — automatizează doar introducerea și pregătirea datelor. Responsabilitatea declarației rămâne la expertul contabil, semnătura la fel. Vorbim activ cu CECCAR pentru versiunea finală.",
+    q: "Trebuie să fiu CECCAR ca să folosesc ContaFlow?",
+    a: "Nu. ContaFlow e pentru orice contabil care ține registrele — cu sau fără viză CECCAR. Dacă ești expert contabil CECCAR, produsul respectă separația între munca mecanică (preprocessare) și judecata profesională (rămâne a ta, semnătura la fel). Discutăm activ cu CECCAR și CCF pentru versiunea finală.",
   },
   {
     q: "Când se lansează?",
@@ -1215,15 +1219,22 @@ function Footer() {
         <div>
           <Logo />
           <p className="mt-3 max-w-sm text-[12.5px] leading-relaxed text-ink-muted">
-            Portalul contabilului român. Construit în Cluj-Napoca, pentru experții contabili CECCAR
-            care vor weekend-urile înapoi.
+            Portalul contabilului român. Construit pentru orice contabil — CECCAR, CCF, PFA sau birou propriu —
+            care vrea să-și revendice weekend-urile.
           </p>
-          <div className="mt-4 flex items-center gap-3 text-[11.5px] text-ink-subtle">
-            <a href="mailto:hello@contaflow.ro" className="inline-flex items-center gap-1 hover:text-ink">
-              <Mail className="h-3 w-3" /> hello@contaflow.ro
-            </a>
-            <span>·</span>
-            <span>Cluj-Napoca, RO</span>
+          <div className="mt-4 space-y-1 text-[11.5px] text-ink-subtle">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <a href="mailto:contact@archdevs.org" className="inline-flex items-center gap-1 hover:text-ink">
+                <Mail className="h-3 w-3" /> contact@archdevs.org
+              </a>
+              <span>·</span>
+              <a href="https://archdevs.org" target="_blank" rel="noopener noreferrer" className="hover:text-ink">
+                archdevs.org
+              </a>
+            </div>
+            <div>
+              Un produs <strong className="font-semibold text-ink">ARCHDEVS SRL</strong> · Pitești, România
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-x-10 gap-y-2 text-[12px] text-ink-muted sm:grid-cols-3">
@@ -1246,7 +1257,8 @@ function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-8 max-w-[1180px] border-t border-border/60 pt-5 text-center text-[11px] text-ink-subtle">
-        © {new Date().getFullYear()} ContaFlow SRL · Marca înregistrată · Toate drepturile rezervate
+        © {new Date().getFullYear()} ARCHDEVS SRL · ContaFlow este marcă în pregătire ·
+        Toate drepturile rezervate
       </div>
     </footer>
   );

@@ -245,13 +245,13 @@ export default function SpvPullPage() {
 
             <div className="mt-6 flex flex-col justify-between gap-3 border-t border-border/60 pt-5 sm:flex-row sm:items-center">
               <div className="text-[12.5px] text-ink-muted">
-                Următorul pas: revizuire cele{" "}
+                Următorul pas: revizuirea celor{" "}
                 <span className="font-medium text-ink">14 documente</span> și export către Saga.
               </div>
               <div className="flex gap-2">
                 <Button variant="outline" asChild>
                   <Link href="/categorize">
-                    Vezi documentele pentru review
+                    Vezi documentele pentru verificare
                   </Link>
                 </Button>
                 <Button asChild className="bg-[hsl(222_70%_18%)] hover:bg-[hsl(222_75%_22%)]">

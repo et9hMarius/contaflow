@@ -472,7 +472,7 @@ function DocRow({ doc, onView }: { doc: DocumentRow; onView: () => void }) {
   const statusVariant: Record<DocumentRow["ocrStatus"], "green" | "amber" | "red"> = {
     "OCR completat": "green",
     "În procesare": "amber",
-    "Necesită review": "red",
+    "Necesită verificare": "red",
   };
   const isImage = doc.filename.match(/\.(jpe?g|png)$/i);
   return (
@@ -540,7 +540,7 @@ function OcrPreview({ doc, onClose }: { doc: DocumentRow; onClose: () => void })
           </div>
           <Badge variant="green" className="gap-1">
             <BadgeCheck className="h-3 w-3" />
-            {data.confidence}% confidence
+            {data.confidence}% încredere
           </Badge>
         </div>
         <div className="relative overflow-hidden rounded-xl border border-border/70 bg-gradient-to-br from-[hsl(40_30%_97%)] to-white p-6">
@@ -650,7 +650,7 @@ function OcrPreview({ doc, onClose }: { doc: DocumentRow; onClose: () => void })
                   style={{ width: `${data.confidence}%` }}
                 />
               </div>
-              <span className="font-medium tabular-nums">{data.confidence}% confidence</span>
+              <span className="font-medium tabular-nums">{data.confidence}% încredere</span>
             </div>
           </dl>
         </div>

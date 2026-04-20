@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { DemoPill } from "@/components/demo-pill";
+import { DemoMobileGate } from "@/components/demo-mobile-gate";
 import {
   Select,
   SelectContent,
@@ -42,6 +43,7 @@ export default function DemoEntryPage() {
   const router = useRouter();
   return (
     <div className="relative isolate min-h-screen overflow-hidden">
+      <DemoMobileGate />
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,hsl(222_70%_24%_/_0.08),transparent_70%)]" />
         <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,hsl(38_95%_60%_/_0.08),transparent_70%)]" />

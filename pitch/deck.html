@@ -1,0 +1,1380 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8" />
+<title>ContaFlow — Pitch Deck</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+
+  :root {
+    --navy: #0F2546;
+    --ink: #1A1D21;
+    --slate: #4A5568;
+    --mute: #8892A0;
+    --line: #E2E5EA;
+    --wash: #F4F6F9;
+    --white: #FFFFFF;
+    --amber: #C47B2A;
+    --amber-soft: #F4E4CC;
+    --red: #A02C2C;
+    --green: #2F6F4F;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #333; }
+  body {
+    font-family: Calibri, "Segoe UI", "Inter", sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .slide {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    background: var(--white);
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+  }
+  .slide:last-child { page-break-after: auto; }
+
+  /* ---------- Shared bits ---------- */
+
+  .topbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 12px;
+    background: var(--navy);
+  }
+  .footer {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--mute);
+    letter-spacing: 0.06em;
+  }
+  .kicker {
+    font-family: Calibri, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  h1.slide-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.12;
+    color: var(--navy);
+    margin: 10px 0 0 0;
+    max-width: 1050px;
+  }
+  p.lede {
+    font-family: Calibri, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--slate);
+    max-width: 1050px;
+    margin: 14px 0 0 0;
+  }
+
+  .slide.content {
+    padding: 58px 72px 72px;
+  }
+
+  /* ---------- SLIDE 1: Title ---------- */
+
+  .title-slide {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .title-slide .amber-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    background: var(--amber);
+  }
+  .title-slide .inner {
+    position: absolute;
+    left: 90px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 1000px;
+  }
+  .title-slide .brand {
+    font-family: Calibri, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: var(--amber);
+  }
+  .title-slide h1 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1.02;
+    margin: 22px 0 16px 0;
+    color: var(--white);
+  }
+  .title-slide .sub {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--white);
+    opacity: 0.92;
+    margin: 0 0 26px 0;
+  }
+  .title-slide .desc {
+    font-family: Calibri, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--white);
+    opacity: 0.8;
+    max-width: 760px;
+  }
+  .title-slide .tag {
+    position: absolute;
+    left: 90px;
+    bottom: 64px;
+    font-family: Calibri, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    color: var(--amber);
+  }
+
+  /* ---------- SLIDE 2: Problem ---------- */
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 28px;
+  }
+  .quote-card {
+    background: var(--wash);
+    border-left: 6px solid var(--amber);
+    padding: 26px 30px;
+    border-radius: 2px;
+  }
+  .quote-card blockquote {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0;
+  }
+  .quote-card .attrib {
+    margin-top: 18px;
+    font-family: Calibri, sans-serif;
+    font-size: 12px;
+    color: var(--slate);
+  }
+  .quote-card .attrib .disclaimer {
+    display: block;
+    font-size: 10px;
+    color: var(--mute);
+    margin-top: 3px;
+  }
+  .pain-list { display: flex; flex-direction: column; gap: 22px; }
+  .pain-item { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; }
+  .pain-item .icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--amber-soft);
+    color: var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .pain-item .t {
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .pain-item .d {
+    font-family: Calibri, sans-serif;
+    font-size: 12.5px;
+    color: var(--slate);
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+
+  /* ---------- SLIDE 3: De ce acum ---------- */
+
+  .grid22 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px;
+    margin-top: 26px;
+  }
+  .yr-card {
+    background: var(--wash);
+    border-left: 4px solid var(--amber);
+    padding: 22px 26px;
+  }
+  .yr-card .yr {
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .yr-card h3 {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    color: var(--navy);
+    margin: 8px 0 10px 0;
+  }
+  .yr-card p {
+    font-family: Calibri, sans-serif;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--slate);
+    margin: 0;
+  }
+  .note-bottom {
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    bottom: 50px;
+    text-align: center;
+    font-family: Calibri, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink);
+  }
+
+  /* ---------- SLIDE 4: Piața ---------- */
+
+  .market {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 28px;
+    margin-top: 26px;
+  }
+  .stat-stack { display: flex; flex-direction: column; gap: 12px; }
+  .stat-card {
+    background: var(--wash);
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: center;
+    gap: 16px;
+  }
+  .stat-card .big {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat-card .t {
+    font-family: Calibri, sans-serif;
+    font-size: 12.5px;
+    color: var(--slate);
+    line-height: 1.4;
+  }
+  .tam-card {
+    background: var(--navy);
+    color: var(--white);
+    padding: 28px 32px;
+    position: relative;
+  }
+  .tam-card .kicker { color: #f1c16a; }
+  .tam-card h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    color: var(--white);
+    margin: 8px 0 18px 0;
+  }
+  .tam-card .kv {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.15);
+    font-family: Calibri, sans-serif;
+    font-size: 12px;
+  }
+  .tam-card .kv:last-of-type { border-bottom: none; }
+  .tam-card .kv .k { color: #f1c16a; letter-spacing: 0.08em; text-transform: uppercase; font-size: 10.5px; font-weight: 700; }
+  .tam-card .kv .v { color: var(--white); }
+  .tam-card .sep { height: 1px; background: var(--amber); opacity: 0.4; margin: 14px 0 10px; }
+  .tam-card .final {
+    font-family: Calibri, sans-serif;
+    font-style: italic;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.5;
+  }
+  .market-source {
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    bottom: 50px;
+    font-family: Calibri, sans-serif;
+    font-style: italic;
+    font-size: 9.5px;
+    color: var(--mute);
+    text-align: center;
+  }
+
+  /* ---------- SLIDE 5: Concurenta ---------- */
+
+  .competitors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-top: 26px;
+  }
+  .comp-card {
+    background: var(--wash);
+    border-top: 4px solid var(--amber);
+    padding: 22px 24px;
+  }
+  .comp-card h3 {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: var(--navy);
+    margin: 0;
+  }
+  .comp-card .badge {
+    display: inline-block;
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin: 8px 0 14px 0;
+  }
+  .comp-card ul {
+    margin: 0;
+    padding-left: 18px;
+    font-family: Calibri, sans-serif;
+    font-size: 11.5px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .comp-card ul li { margin-bottom: 7px; }
+
+  /* ---------- SLIDE 6: Wedge ---------- */
+
+  .wedge-band {
+    margin-top: 18px;
+    background: var(--navy);
+    padding: 26px 34px;
+    color: var(--white);
+  }
+  .wedge-band blockquote {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--white);
+  }
+  .wedge-cards {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .wedge-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 20px 22px;
+    position: relative;
+  }
+  .wedge-card .check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--amber);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+  }
+  .wedge-card h4 {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: var(--navy);
+    margin: 6px 0 6px 0;
+  }
+  .wedge-card p {
+    font-family: Calibri, sans-serif;
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ---------- SLIDE 7: Produs ---------- */
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    margin-top: 26px;
+  }
+  .prod-card {
+    background: var(--wash);
+    padding: 20px 22px;
+  }
+  .prod-card .num {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--amber);
+  }
+  .prod-card h4 {
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+    margin: 6px 0 8px 0;
+  }
+  .prod-card p {
+    font-family: Calibri, sans-serif;
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ---------- SLIDE 8: Demo recap ---------- */
+
+  .demo-note {
+    font-family: Calibri, sans-serif;
+    font-style: italic;
+    font-size: 10.5px;
+    color: var(--mute);
+    margin-top: 6px;
+  }
+  .timeline {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .tl-card {
+    background: var(--wash);
+    overflow: hidden;
+  }
+  .tl-card .band {
+    background: var(--navy);
+    color: var(--amber);
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 7px 12px;
+    letter-spacing: 0.14em;
+    text-align: center;
+  }
+  .tl-card .t {
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--navy);
+    text-align: center;
+    padding: 14px 12px 4px;
+  }
+  .tl-card .d {
+    font-family: Calibri, sans-serif;
+    font-size: 10.5px;
+    color: var(--slate);
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 12px 18px;
+  }
+  .result-band {
+    margin-top: 26px;
+    background: var(--navy);
+    padding: 26px 32px;
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    align-items: center;
+    gap: 28px;
+  }
+  .result-band .big {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 44px;
+    color: var(--amber);
+    line-height: 1;
+  }
+  .result-band .right .main {
+    font-family: Calibri, sans-serif;
+    font-size: 14.5px;
+    color: var(--white);
+    font-weight: 600;
+  }
+  .result-band .right .kpi-note {
+    font-family: Calibri, sans-serif;
+    font-style: italic;
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.5;
+    margin-top: 6px;
+    max-width: 700px;
+  }
+
+  /* ---------- SLIDE 9: Distribuție ---------- */
+
+  .dist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px;
+    margin-top: 26px;
+  }
+  .dist-card {
+    background: var(--wash);
+    padding: 22px 26px;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+  }
+  .dist-card .icon-round {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--amber);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .dist-card .wave {
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--amber);
+    text-transform: uppercase;
+  }
+  .dist-card h4 {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    color: var(--navy);
+    margin: 4px 0 8px 0;
+  }
+  .dist-card p {
+    font-family: Calibri, sans-serif;
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ---------- SLIDE 10: Preț ---------- */
+
+  .pricing {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    align-items: stretch;
+  }
+  .plan {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .plan.recommended {
+    background: var(--navy);
+    border: none;
+    color: var(--white);
+    position: relative;
+    transform: translateY(-8px);
+  }
+  .plan .badge {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+    color: var(--amber);
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+  .plan h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: var(--navy);
+    margin: 0;
+  }
+  .plan.recommended h3 { color: var(--white); }
+  .plan .price {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--amber);
+    margin: 14px 0 2px 0;
+    line-height: 1;
+  }
+  .plan .price .per {
+    font-size: 14px;
+    color: var(--slate);
+    font-weight: 400;
+  }
+  .plan.recommended .price .per { color: rgba(255,255,255,0.7); }
+  .plan .sub {
+    font-family: Calibri, sans-serif;
+    font-style: italic;
+    font-size: 11.5px;
+    color: var(--slate);
+    margin-bottom: 16px;
+  }
+  .plan.recommended .sub { color: rgba(255,255,255,0.7); }
+  .plan ul {
+    margin: 0;
+    padding-left: 18px;
+    font-family: Calibri, sans-serif;
+    font-size: 11.5px;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+  .plan.recommended ul { color: var(--white); }
+  .plan ul li { margin-bottom: 4px; }
+  .price-note {
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    bottom: 52px;
+    font-family: Calibri, sans-serif;
+    font-style: italic;
+    font-size: 9.5px;
+    color: var(--slate);
+    text-align: center;
+  }
+
+  /* ---------- SLIDE 11: Riscuri ---------- */
+
+  .risks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    margin-top: 22px;
+  }
+  .risk {
+    background: var(--wash);
+    border-left: 4px solid var(--red);
+    padding: 16px 20px;
+  }
+  .risk h4 {
+    font-family: Georgia, serif;
+    font-size: 13px;
+    color: var(--navy);
+    margin: 0 0 6px 0;
+  }
+  .risk p {
+    font-family: Calibri, sans-serif;
+    font-size: 10.5px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ---------- SLIDE 12: Roadmap ---------- */
+
+  .roadmap {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .stage {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .stage:last-child { border-bottom: none; }
+  .stage .bullet {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--amber);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .stage .when {
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--amber);
+    text-transform: uppercase;
+  }
+  .stage h4 {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: var(--navy);
+    margin: 2px 0 4px 0;
+  }
+  .stage p {
+    font-family: Calibri, sans-serif;
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* ---------- SLIDE 13: Sources ---------- */
+
+  .sources {
+    margin-top: 22px;
+    border: 1px solid var(--line);
+  }
+  .sources .head {
+    background: var(--navy);
+    color: var(--amber);
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    padding: 10px 18px;
+  }
+  .sources .row {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    padding: 9px 18px;
+    font-family: Calibri, sans-serif;
+    font-size: 10.5px;
+    line-height: 1.4;
+  }
+  .sources .row:nth-child(even) { background: var(--wash); }
+  .sources .row .c { color: var(--ink); }
+  .sources .row .s { color: var(--slate); }
+  .source-note {
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    bottom: 50px;
+    font-family: Calibri, sans-serif;
+    font-style: italic;
+    font-size: 9px;
+    color: var(--slate);
+    text-align: center;
+  }
+
+  /* ---------- SLIDE 14: Ask ---------- */
+
+  .ask {
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+  }
+  .ask .amber-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    background: var(--amber);
+  }
+  .ask .inner {
+    padding: 70px 80px 60px;
+  }
+  .ask .kicker-top { color: var(--amber); }
+  .ask h1 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 52px;
+    color: var(--white);
+    margin: 20px 0 10px 0;
+    line-height: 1.05;
+  }
+  .ask .sub {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(255,255,255,0.82);
+    margin: 0 0 32px 0;
+    max-width: 820px;
+  }
+  .ask .criteria {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .ask .crit {
+    background: var(--white);
+    padding: 22px 24px;
+    color: var(--ink);
+  }
+  .ask .crit .n {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--amber);
+    line-height: 1;
+  }
+  .ask .crit h4 {
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--navy);
+    margin: 10px 0 8px 0;
+  }
+  .ask .crit p {
+    font-family: Calibri, sans-serif;
+    font-size: 11.5px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .ask .contact {
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--amber);
+    letter-spacing: 0.03em;
+  }
+  .ask .page-num {
+    position: absolute;
+    right: 52px;
+    bottom: 32px;
+    font-family: Calibri, sans-serif;
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.06em;
+  }
+
+  /* ---------- Icon helpers ---------- */
+  .ic { font-family: "Segoe UI Symbol", sans-serif; }
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDE 1: TITLE ============ -->
+<section class="slide title-slide">
+  <div class="amber-bar"></div>
+  <div class="inner">
+    <div class="brand">CONTAFLOW</div>
+    <h1>Portalul contabilului român</h1>
+    <div class="sub">Închiderea lunii în ore, nu în zile.</div>
+    <div class="desc">Pentru orice contabil sau firmă de contabilitate care ține registrele în Saga, WinMentor sau Ciel — aducem documentele clienților și facturile din SPV într-un loc, le categorizăm automat, și scoatem un fișier de import curat pentru motorul tău existent.</div>
+  </div>
+  <div class="tag">APRILIE 2026 · EARLY ACCESS</div>
+</section>
+
+<!-- ============ SLIDE 2: PROBLEMA ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">PROBLEMA</div>
+  <h1 class="slide-title">Închiderea lunii durează 3–5 zile. În fiecare lună.</h1>
+
+  <div class="two-col">
+    <div class="quote-card">
+      <blockquote>„În jurul datei de 25 mă închid în birou cu laptopul și Saga deschis. 3 zile de alergat după clienți pe WhatsApp, descărcat facturi din SPV înainte să le șteargă ANAF la 60 de zile, și introdus totul manual. În fiecare lună aceeași poveste."</blockquote>
+      <div class="attrib">
+        — Contabil cu birou propriu, 38 de clienți, Cluj
+        <span class="disclaimer">(citat ilustrativ — tipic pentru segment)</span>
+      </div>
+    </div>
+
+    <div class="pain-list">
+      <div class="pain-item">
+        <div class="icon ic">⏱</div>
+        <div>
+          <div class="t">Alergat după documente</div>
+          <div class="d">WhatsApp, email, telefon. 15–20 ore pe lună doar pentru colectare.</div>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="icon ic">🗄</div>
+        <div>
+          <div class="t">Descărcare manuală din SPV</div>
+          <div class="d">ANAF păstrează facturile doar 60 de zile. După, doar la cerere.</div>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="icon ic">📄</div>
+        <div>
+          <div class="t">Introdus manual în Saga, WinMentor sau Ciel</div>
+          <div class="d">Aceeași dată tastată de 2–3 ori. Greșeli garantate.</div>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="icon ic">⚠</div>
+        <div>
+          <div class="t">SAF-T D406 — peste 390 de câmpuri</div>
+          <div class="d">Obligatoriu din ianuarie 2025 pentru firmele mici. Majoritatea îl tratează parțial manual.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>2 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 3: DE CE ACUM ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">DE CE ACUM</div>
+  <h1 class="slide-title">Patru mandate legale forțează digitalizarea</h1>
+
+  <div class="grid22">
+    <div class="yr-card">
+      <div class="yr">2025</div>
+      <h3>e-Factura B2B complet obligatorie</h3>
+      <p>Din 1 ianuarie 2025, toate facturile B2B trec prin SPV. Din 1 ianuarie 2026, cheltuielile fără e-Factura nu mai sunt deductibile. Referință: OUG 69/2024, OUG 94/2025.</p>
+    </div>
+    <div class="yr-card">
+      <div class="yr">2025</div>
+      <h3>SAF-T D406 pentru firmele mici</h3>
+      <p>Din 1 ianuarie 2025, toți contribuabilii mici depun D406 lunar sau trimestrial. Peste 390 de elemente obligatorii per raport, în XML strict validat.</p>
+    </div>
+    <div class="yr-card">
+      <div class="yr">2025</div>
+      <h3>Migrarea REVISAL → REGES-ONLINE</h3>
+      <p>Finalizată 31 decembrie 2025. Orice produs de contabilitate sau HR trebuie să integreze noua platformă.</p>
+    </div>
+    <div class="yr-card">
+      <div class="yr">2026</div>
+      <h3>Drepturile de autor intră în e-Factura</h3>
+      <p>Din 1 iunie 2026 (OUG 89/2025 + OUG 6/2026), freelancerii cu drepturi de autor intră obligatoriu în SPV. Val de peste 100.000 cumpărători noi de software de facturare.</p>
+    </div>
+  </div>
+
+  <div class="note-bottom">Efect cumulat: fiecare mandat obligă contabilul să atingă SPV-ul de 3–4 ori pe zi. Automatizarea nu mai este opțională.</div>
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>3 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 4: PIATA ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">PIAȚA</div>
+  <h1 class="slide-title">Nu doar CECCAR. Orice contabil care ține registrele.</h1>
+
+  <div class="market">
+    <div class="stat-stack">
+      <div class="stat-card"><div class="big">12.625</div><div class="t">firme active cu CAEN 6920 — contabilitate, audit, consultanță fiscală</div></div>
+      <div class="stat-card"><div class="big">~1.644</div><div class="t">firme cu viză CECCAR (subset reglementat)</div></div>
+      <div class="stat-card"><div class="big">~45k</div><div class="t">membri CECCAR (experți contabili + autorizați)</div></div>
+      <div class="stat-card"><div class="big">150k+</div><div class="t">firme RO care folosesc SmartBill — clienți potențiali</div></div>
+    </div>
+
+    <div class="tam-card">
+      <div class="kicker">TAM REALIST</div>
+      <h3>~€2,1M ARR adresabil în România</h3>
+      <div class="kv"><div class="k">TAM total</div><div class="v">12.625 firme CAEN 6920 active</div></div>
+      <div class="kv"><div class="k">SAM (target primar)</div><div class="v">~3.500 firme cu 20–150 clienți (estimare prudentă)</div></div>
+      <div class="kv"><div class="k">SOM an 2</div><div class="v">10% penetrare = 350 firme plătitoare</div></div>
+      <div class="kv"><div class="k">ACV țintă</div><div class="v">€588 / an (€49 / lună plan Professional)</div></div>
+      <div class="kv"><div class="k">Drum 18 luni</div><div class="v">€60k ARR (100 firme) · 24 luni: €150k–€200k (250–340 firme)</div></div>
+      <div class="sep"></div>
+      <div class="final">Mai mare decât credeam la prima vedere — dar tot defensabil. €5k MRR în 12 luni cu echipă de 2 e realist, fără să atingem nici 5% din SAM.</div>
+    </div>
+  </div>
+
+  <div class="market-source">Surse: TopFirme.com (CAEN 6920, 12.625 firme active, verificat aprilie 2026), tablou CECCAR (ceccar.ro), Visma SmartBill (peste 165k utilizatori).</div>
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>4 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 5: CONCURENTA ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">CONCURENȚA, ONEST</div>
+  <h1 class="slide-title">Trei categorii de jucători. Fiecare lasă ceva pe masă.</h1>
+
+  <div class="competitors">
+    <div class="comp-card">
+      <h3>TaxDome (globali)</h3>
+      <div class="badge">LOCALIZARE AGRESIVĂ, PREȚ RIDICAT</div>
+      <ul>
+        <li>Site în română (taxdome.com/ro-ro), linie telefonică +40 376 300 023, blog în română pe subiecte 2026.</li>
+        <li>Preț: $800–1.200 per utilizator / an cu angajament anual. Suplimentar $480 / an SmartVault, $999–3.499 implementare.</li>
+        <li>Nu exportă în Saga, WinMentor sau Ciel. Construit pe QuickBooks și Xero.</li>
+        <li>Nu are preluare nativă din SPV ANAF.</li>
+      </ul>
+    </div>
+    <div class="comp-card">
+      <h3>SmartBill ManagerConta</h3>
+      <div class="badge">GRATUIT, MATUR, DAR ÎNGUST</div>
+      <ul>
+        <li>Lansat în decembrie 2019 (nu e produs nou). Peste 6 ani de maturitate. Gratuit pentru firmele de contabilitate.</li>
+        <li>Depune declarații (D100, D112, D300, D394 etc.), accesează SPV, gestionează contracte clienți.</li>
+        <li>Funcționează independent de softul de contabilitate, dar împinge contabilii către SmartBill Conta.</li>
+        <li>Nu are export în Saga, WinMentor sau Ciel (structural — ar contrazice strategia SmartBill).</li>
+      </ul>
+    </div>
+    <div class="comp-card">
+      <h3>Saga și softuri desktop</h3>
+      <div class="badge">MOTORUL DE CONTABILITATE, NU PORTAL</div>
+      <ul>
+        <li>Saga, WinMentor, Ciel sunt motoarele de registre contabile. Aproximativ 50% dintre contabilii RO folosesc Saga.</li>
+        <li>Toate desktop-era. Fără componentă pentru client (clientul nu se loghează, nu încarcă nimic).</li>
+        <li>Fără OCR, fără colectare automată, fără UI modern.</li>
+        <li>Formatul lor de import este ce trebuie să producem.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note-bottom">Lipsa comună tuturor: niciunul nu combină (a) colectare de la client cu OCR, (b) preluare din SPV pentru mai mulți clienți, (c) export nativ în Saga / WinMentor / Ciel.</div>
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>5 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 6: WEDGE ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">POZIȚIONAREA NOASTRĂ</div>
+  <h1 class="slide-title">Nu concurăm pe frumusețea UI. Concurăm pe plumbing.</h1>
+
+  <div class="wedge-band">
+    <blockquote>Pentru firma de contabilitate care ține registrele în Saga, WinMentor sau Ciel — aducem documentele clienților și facturile din SPV într-un loc, le categorizăm automat, și scoatem un fișier de import curat pentru motorul tău existent.</blockquote>
+  </div>
+
+  <div class="wedge-cards">
+    <div class="wedge-card">
+      <div class="check">✓</div>
+      <h4>vs TaxDome</h4>
+      <p>Jumătate de preț. Export nativ în Saga, WinMentor sau Ciel — ei nu au și nu au motiv să construiască. Preluare nativă din SPV, nu doar stocare.</p>
+    </div>
+    <div class="wedge-card">
+      <div class="check">✓</div>
+      <h4>vs SmartBill ManagerConta</h4>
+      <p>Ei sunt gratuiți și maturi. Noi adăugăm stratul care le lipsește: portal pentru client (încărcare directă), OCR pe documente arbitrare, export Saga / WinMentor / Ciel. Parazităm pe ecosistemul lor, nu îl contestăm.</p>
+    </div>
+    <div class="wedge-card">
+      <div class="check">✓</div>
+      <h4>vs nimic (status quo)</h4>
+      <p>Majoritatea firmelor cu mai puțin de 10 experți sunt pe Excel, WhatsApp și Saga. SPV pierde facturi la 60 de zile. SAF-T D406 cu peste 390 de câmpuri se face încă parțial manual.</p>
+    </div>
+  </div>
+
+  <div class="note-bottom" style="color: var(--slate);">Traducere: nu fugim după piața mare. Ne așezăm între portalul modern și motorul clasic, și le îndoim pe amândouă.</div>
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>6 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 7: PRODUS ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">CE FACE PRODUSUL</div>
+  <h1 class="slide-title">6 pași. Tot ce face contabilul în 3–5 zile, aici în câteva ore.</h1>
+
+  <div class="product-grid">
+    <div class="prod-card"><div class="num">01</div><h4>Preluare automată din SPV</h4><p>Conectare zilnică la ANAF pentru toți clienții. Facturile primite și emise descărcate și arhivate permanent.</p></div>
+    <div class="prod-card"><div class="num">02</div><h4>Clientul încarcă restul</h4><p>Portal web și PWA mobil. Clientul fotografiază bonul sau încarcă PDF-ul. Remindere automate când lipsește ceva.</p></div>
+    <div class="prod-card"><div class="num">03</div><h4>OCR pe documente RO</h4><p>Extragere CUI furnizor, TVA, total, dată. Furnizor recunoscut din bonuri termice și facturi scanate.</p></div>
+    <div class="prod-card"><div class="num">04</div><h4>Categorizare cu revizuire</h4><p>Sugestii automate cu nivel de încredere. Doar cazurile ambigue ajung la contabil.</p></div>
+    <div class="prod-card"><div class="num">05</div><h4>Export Saga / WinMentor / Ciel</h4><p>Fișier gata de import în motorul tău existent. Nu muți datele — le aduci curate.</p></div>
+    <div class="prod-card"><div class="num">06</div><h4>Declarații plus SAF-T D406</h4><p>Pre-completare D112, D300, D394. Cockpit dedicat pentru D406 cu validare contra schemei XSD oficiale.</p></div>
+  </div>
+
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>7 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 8: DEMO RECAP ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">DEMO RECAP</div>
+  <h1 class="slide-title">O dimineață cu ContaFlow: 47 de clienți, închiderea lunii martie 2026</h1>
+  <div class="demo-note">Scenariu ilustrativ, nu date reale. Timpii reflectă durata tipică pentru o firmă cu 1–3 experți și profil mediu de clienți.</div>
+
+  <div class="timeline">
+    <div class="tl-card">
+      <div class="band">09:14</div>
+      <div class="t">Preluare SPV</div>
+      <div class="d">47 de clienți procesați în 20 de minute</div>
+    </div>
+    <div class="tl-card">
+      <div class="band">09:47</div>
+      <div class="t">Categorizare</div>
+      <div class="d">Doar 7 documente ambigue necesită atenția expertului</div>
+    </div>
+    <div class="tl-card">
+      <div class="band">10:22</div>
+      <div class="t">Export Saga</div>
+      <div class="d">Fișier XML/DBF gata de import</div>
+    </div>
+    <div class="tl-card">
+      <div class="band">11:08</div>
+      <div class="t">D112, D300, D394</div>
+      <div class="d">Depuse la SPV, recipisă salvată automat per client</div>
+    </div>
+    <div class="tl-card">
+      <div class="band">11:28</div>
+      <div class="t">SAF-T D406</div>
+      <div class="d">15 clienți mici — validare contra XSD, depunere</div>
+    </div>
+  </div>
+
+  <div class="result-band">
+    <div class="big">2h 14min</div>
+    <div class="right">
+      <div class="main">total în loc de 3–5 zile tipic pentru 47 de clienți.</div>
+      <div class="kpi-note">Rata de potrivire automată între documentele clientului și facturile din SPV este un KPI intern pe care îl măsurăm de la primele firme pilot. Valorile finale se stabilesc la validare.</div>
+    </div>
+  </div>
+
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>8 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 9: DISTRIBUTIE ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">DISTRIBUȚIE</div>
+  <h1 class="slide-title">Rapid prin grupuri și referral. Instituțional după ce avem tracțiune.</h1>
+
+  <div class="dist-grid">
+    <div class="dist-card">
+      <div class="icon-round ic">👥</div>
+      <div>
+        <div class="wave">WAVE 1 · LUNA 1</div>
+        <h4>Grupurile profesionale din Facebook</h4>
+        <p>Saga Software Forum (peste 10.000 de membri), Contabilitate PFA/SRL, grupuri regionale. Contabilii pun întrebări practice aici zilnic. Prezență organică 2–3 luni cu răspunsuri utile, apoi menționare naturală a produsului.</p>
+      </div>
+    </div>
+    <div class="dist-card">
+      <div class="icon-round ic">📰</div>
+      <div>
+        <div class="wave">WAVE 1 · LUNA 1</div>
+        <h4>Conținut pe canalele specializate</h4>
+        <p>Contzilla, PortalContabilitate, efin.ro, contabilii.ro. Advertoriale scrise cu unghi contabil, nu cu unghi de startup. Un articol bine plasat ajunge la audiență de nișă cu intenție reală.</p>
+      </div>
+    </div>
+    <div class="dist-card">
+      <div class="icon-round ic">🤝</div>
+      <div>
+        <div class="wave">WAVE 1 · LUNA 2–4</div>
+        <h4>Referral între firme</h4>
+        <p>Firmele mici se cunosc între ele. Program explicit: 3 luni gratis pentru fiecare firmă recomandată care devine plătitoare. Costă mai puțin și convertește mai bine decât orice canal instituțional.</p>
+      </div>
+    </div>
+    <div class="dist-card">
+      <div class="icon-round ic">🏛</div>
+      <div>
+        <div class="wave">WAVE 2 · LUNA 4+</div>
+        <h4>CECCAR și CCF — filiale regionale</h4>
+        <p>După primii 10 clienți și un studiu de caz concret. Prezentări la filialele regionale CECCAR și Camera Consultanților Fiscali. Eventual parteneriat național când avem presă. Instituțiile sunt lente și conservatoare — venim cu credibilitate deja construită.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="note-bottom" style="color: var(--slate);">Lecție din cercetare: contabilii cumpără de la alți contabili. Construim în valuri — întâi comunitate, apoi instituții.</div>
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>9 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 10: PRET ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">PREȚUL</div>
+  <h1 class="slide-title">Per firmă, nu per utilizator.</h1>
+
+  <div class="pricing">
+    <div class="plan">
+      <h3>Starter</h3>
+      <div class="price">€25<span class="per"> / lună</span></div>
+      <div class="sub">Pentru firme cu până la 20 de clienți</div>
+      <ul>
+        <li>Preluare zilnică din SPV</li>
+        <li>OCR nelimitat</li>
+        <li>Export Saga, WinMentor sau Ciel</li>
+        <li>Portal pentru client</li>
+        <li>Suport pe email</li>
+      </ul>
+    </div>
+    <div class="plan recommended">
+      <div class="badge">RECOMANDAT</div>
+      <h3>Professional</h3>
+      <div class="price">€49<span class="per"> / lună</span></div>
+      <div class="sub">Pentru firme cu până la 50 de clienți</div>
+      <ul>
+        <li>Tot din Starter</li>
+        <li>Cockpit SAF-T D406</li>
+        <li>Depunere automată declarații</li>
+        <li>Multi-user (până la 3)</li>
+        <li>Suport prioritar</li>
+        <li>Arhivare permanentă</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <h3>Firmă</h3>
+      <div class="price">€89<span class="per"> / lună</span></div>
+      <div class="sub">Pentru firme cu până la 150 de clienți</div>
+      <ul>
+        <li>Tot din Professional</li>
+        <li>Multi-user nelimitat</li>
+        <li>API pentru ERP intern</li>
+        <li>SLA 99,9% + suport dedicat</li>
+        <li>Onboarding asistat</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="price-note">Referință: TaxDome cere $800–1.200 per utilizator pe an. O firmă cu 3 experți pe TaxDome Pro costă aproximativ $3.000 / an. ContaFlow Professional costă €588 / an pentru toată firma.</div>
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>10 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 11: RISCURI ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">RISCURI</div>
+  <h1 class="slide-title">Ce poate merge prost. Și cum răspundem.</h1>
+
+  <div class="risks">
+    <div class="risk"><h4>SmartBill lansează export Saga</h4><p>Probabilitate mică. Ar sabota strategia lor de a muta contabilii pe SmartBill Conta. Mitigare: construim o relație de parteneriat, nu de concurență. Optimizăm explicit pentru a-i extinde, nu a-i înlocui.</p></div>
+    <div class="risk"><h4>TaxDome scade prețul în RO</h4><p>Posibil. Pentru o firmă cu 1–3 experți, chiar și o reducere de 50% lasă costul peste €30 / user / lună. Diferențiatorul rămâne Saga, WinMentor, Ciel — nu e o problemă de preț.</p></div>
+    <div class="risk"><h4>ANAF schimbă protocolul SPV</h4><p>Constant. ANAF actualizează semestrial. Toți jucătorii plătesc același impozit. Buget fix lunar pentru regresie și update-uri.</p></div>
+    <div class="risk"><h4>Piața e prea mică</h4><p>Real. Aproximativ 600 de firme ca target primar înseamnă plafon realist €300–400k ARR. Strategie: extindem în piețe CEE cu plumbing similar (Bulgaria, Ungaria) după ce atingem ~€100k ARR.</p></div>
+    <div class="risk"><h4>Dependența de un singur canal</h4><p>Mitigare: multi-canal din ziua 1. Grupuri Facebook + conținut pe canale specializate + referral încrucișat + CECCAR ca wave 2.</p></div>
+    <div class="risk"><h4>Cumpărătorul tipic e conservator</h4><p>Adevărat. Firmele mici cu experți CECCAR sunt conservatoare. Mitigare: 30 de zile trial gratuit, onboarding asistat, 3 luni bonus la plata anuală, garanții specifice.</p></div>
+  </div>
+
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>11 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 12: ROADMAP ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">ROADMAP</div>
+  <h1 class="slide-title">Drumul până la primii 10 clienți plătitori</h1>
+
+  <div class="roadmap">
+    <div class="stage">
+      <div class="bullet">1</div>
+      <div>
+        <div class="when">LUNA 1–2</div>
+        <h4>Landing page plus smoke test</h4>
+        <p>€20 / zi ad spend, 3 variante de copy, 4 săptămâni. Ținta: CPL sub €15, cel puțin 5 răspunsuri entuziaste.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="bullet">2</div>
+      <div>
+        <div class="when">LUNA 2–3</div>
+        <h4>MVP cu 2 integrări</h4>
+        <p>Preluare SPV, OCR și export Saga (primul motor). 3–4 clienți pilot din landing page, gratuit primele 3 luni în schimbul feedback-ului săptămânal.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="bullet">3</div>
+      <div>
+        <div class="when">LUNA 4–5</div>
+        <h4>WinMentor, Ciel și cockpit SAF-T</h4>
+        <p>Extindere export la cele 3 motoare principale. SAF-T D406 cockpit ca feature de primă clasă. Primii 5 clienți plătitori.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="bullet">4</div>
+      <div>
+        <div class="when">LUNA 6–9</div>
+        <h4>10 clienți plătitori</h4>
+        <p>Primul studiu de caz publicat. Program de referral activat. Intrare pe canalele CECCAR cu credibilitate construită. 10 clienți plătitori ≈ €500 / lună MRR.</p>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="bullet">5</div>
+      <div>
+        <div class="when">LUNA 10–12</div>
+        <h4>Scalare organică</h4>
+        <p>30–50 clienți plătitori ≈ €2–3k MRR. Decizie: raise, bootstrap sau specializare verticală (de exemplu CRM pentru clinici sau agenții turism bazat pe stack-ul ContaFlow).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>12 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 13: FACT-CHECK ============ -->
+<section class="slide content">
+  <div class="topbar"></div>
+  <div class="kicker">SURSELE DIN SPATELE CIFRELOR</div>
+  <h1 class="slide-title">Claim-uri verificate. Surse citate.</h1>
+
+  <div class="sources">
+    <div class="head"><div>CLAIM</div><div>SURSĂ</div></div>
+    <div class="row"><div class="c">12.625 firme active CAEN 6920 (contabilitate, audit, consultanță fiscală)</div><div class="s">topfirme.com/caen/6920 — verificat aprilie 2026</div></div>
+    <div class="row"><div class="c">~1.644 firme cu viză CECCAR; ~45k membri CECCAR (subset reglementat)</div><div class="s">Tablou membri ceccar.ro; declarații președinte CECCAR aprilie 2025 (Business Magazine)</div></div>
+    <div class="row"><div class="c">e-Factura B2B obligatorie 1 ian 2025; deductibilitate condiționată 1 ian 2026</div><div class="s">ANAF, KPMG VAT Update, Monitorul Oficial (OUG 69/2024, OUG 94/2025)</div></div>
+    <div class="row"><div class="c">ANAF păstrează e-Factura în SPV doar 60 de zile</div><div class="s">ANAF site oficial; documentația SmartBill; webinar ANAF 2024 (via StartupCafe)</div></div>
+    <div class="row"><div class="c">SAF-T D406 obligatoriu pentru contribuabili mici din 1 ian 2025</div><div class="s">ANAF (anaf.ro/static/3/Brasov, Cluj); StartupCafe; Alfasign ghid contabili 2025</div></div>
+    <div class="row"><div class="c">SAF-T D406 conține peste 390 de elemente obligatorii per raport</div><div class="s">PwC România; Storecove blog noiembrie 2025; practicieni LinkedIn</div></div>
+    <div class="row"><div class="c">TaxDome: $800 Essentials, $1.000 Pro, $1.200 Business / user / an</div><div class="s">TaxDome pricing oficial, G2, Capterra, PricingNow (verificat aprilie 2026)</div></div>
+    <div class="row"><div class="c">TaxDome localizat RO (taxdome.com/ro-ro, +40 376 300 023)</div><div class="s">Site oficial TaxDome — verificat aprilie 2026</div></div>
+    <div class="row"><div class="c">SmartBill ManagerConta gratuit pentru contabili, lansat 2019</div><div class="s">smartbill.ro/produse/managerconta; comunicat SmartBill 12.12.2019 (via Contzilla)</div></div>
+    <div class="row"><div class="c">SmartBill: peste 150k–165k firme RO; parte din grupul Visma (Norvegia)</div><div class="s">visma.ro/cine-suntem/company/smartbill; smartbill.ro</div></div>
+  </div>
+
+  <div class="source-note">Cifrele din demo („89% potrivire automată", „2h 14min", „47 de clienți") sunt ilustrative pentru prezentare, nu măsurători reale. Le validăm cu primii 3 piloți în lunile 3–4.</div>
+  <div class="footer"><span>ContaFlow · pitch deck</span><span>13 / 14</span></div>
+</section>
+
+<!-- ============ SLIDE 14: ASK ============ -->
+<section class="slide ask">
+  <div class="amber-bar"></div>
+  <div class="inner">
+    <div class="kicker kicker-top">CE CĂUTĂM</div>
+    <h1>3 firme de contabilitate pilot.</h1>
+    <div class="sub">Gratuit primele 3 luni. Feedback săptămânal. Primii clienți plătitori în luna 4.</div>
+
+    <div class="criteria">
+      <div class="crit">
+        <div class="n">1</div>
+        <h4>Firmă sau contabil cu 20–50 de clienți</h4>
+        <p>Cu sau fără viză CECCAR. Esențial: experiență practică cu Saga, WinMentor sau Ciel ca motor principal.</p>
+      </div>
+      <div class="crit">
+        <div class="n">2</div>
+        <h4>Activ în comunitatea profesională</h4>
+        <p>Membru al unui grup Facebook contabil, filială CECCAR/CCF, sau cu rețea în breaslă pentru referral.</p>
+      </div>
+      <div class="crit">
+        <div class="n">3</div>
+        <h4>Deschis să schimbe workflow-ul</h4>
+        <p>Dispus să încerce un instrument nou pentru 3 cicluri de închidere de probă.</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      contact: contact@archdevs.org · archdevs.org · Pitești, România · un produs ARCHDEVS SRL
+    </div>
+  </div>
+  <div class="page-num">14 / 14</div>
+</section>
+
+</body>
+</html>

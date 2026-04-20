@@ -38,7 +38,7 @@ const PLANS = [
     price: "€25",
     tagline: "pentru firme cu până la 20 clienți",
     features: [
-      "SPV e-Factura pull zilnic",
+      "Preluare zilnică din SPV e-Factura",
       "OCR & categorizare automată",
       "Export Saga / WinMentor / Ciel",
       "Declarații D112, D300, D394 automate",
@@ -65,7 +65,7 @@ const PLANS = [
     features: [
       "Tot din Professional",
       "Multi-user (juniori + senior CECCAR)",
-      "Audit trail complet + istoric 5 ani",
+      "Jurnal de audit complet + istoric 5 ani",
       "Integrare custom API bookkeeping",
       "Account manager dedicat",
     ],
@@ -284,7 +284,7 @@ export default function SummaryPage() {
           </div>
           <div className="hidden rounded-xl border border-white/10 bg-white/[0.04] p-4 md:block">
             <div className="flex items-center gap-1.5 text-[10.5px] font-semibold uppercase tracking-wide text-amber-200">
-              <Award className="h-3 w-3" /> Beta cohort
+              <Award className="h-3 w-3" /> Cohortă beta
             </div>
             <div className="mt-2 font-serif text-[28px] font-medium text-white">22</div>
             <div className="text-[11px] text-white/60">

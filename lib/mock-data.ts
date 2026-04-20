@@ -49,7 +49,7 @@ export interface DocumentRow {
   uploadedBy: string;
   uploadedAt: string;
   type: "Factură furnizor" | "Bon fiscal" | "Extras bancar" | "Chitanță" | "Factură emisă";
-  ocrStatus: "OCR completat" | "În procesare" | "Necesită review";
+  ocrStatus: "OCR completat" | "În procesare" | "Necesită verificare";
   preview?: string;
   extracted?: {
     furnizor: string;
@@ -392,7 +392,7 @@ export const brincoveanuDocuments: DocumentRow[] = [
     uploadedBy: "Client (WhatsApp bot)",
     uploadedAt: "2026-04-22T09:15:00",
     type: "Bon fiscal",
-    ocrStatus: "Necesită review",
+    ocrStatus: "Necesită verificare",
     preview: "Bon fiscal — fotografie neclară, 22.04.2026",
   },
   {
@@ -507,7 +507,7 @@ export const spvLogLines: SpvLogLine[] = [
   { time: "09:14:07", text: "→ 47 facturi primite, 156 facturi emise descărcate", kind: "info" },
   { time: "09:14:08", text: "Sincronizare client 3/47: Constructii Brîncoveanu SRL", kind: "progress" },
   { time: "09:14:09", text: "→ 34 facturi primite, 11 facturi emise descărcate", kind: "info" },
-  { time: "09:14:10", text: "⚠ Atenție: 2 facturi stornate detectate — necesită review", kind: "warn" },
+  { time: "09:14:10", text: "⚠ Atenție: 2 facturi stornate detectate — necesită verificare", kind: "warn" },
   { time: "09:14:11", text: "Sincronizare client 4/47: Cafe Ursul Polar SRL", kind: "progress" },
   { time: "09:14:12", text: "→ 11 facturi primite, 0 facturi emise (HoReCa — predominant bonuri)", kind: "info" },
   { time: "09:14:13", text: "Sincronizare client 5/47: Ionescu Mihai PFA", kind: "progress" },
@@ -524,8 +524,8 @@ export const spvLogLines: SpvLogLine[] = [
   { time: "09:14:31", text: "→ 0 facturi primite, 0 facturi emise (⚠ date SPV lipsă — verifică certificat)", kind: "warn" },
   { time: "09:14:34", text: "Sincronizare completă: 47/47 clienți", kind: "ok" },
   { time: "09:14:35", text: "Total descărcat: 1.247 documente (834 primite, 413 emise)", kind: "info" },
-  { time: "09:14:35", text: "Arhivare în cloud storage (GDPR-compliant, EU region) ✓", kind: "ok" },
-  { time: "09:14:36", text: "Potrivire automată cu documente încărcate de clienți: 89% match rate", kind: "ok" },
+  { time: "09:14:35", text: "Arhivare în cloud (conform GDPR, regiune UE) ✓", kind: "ok" },
+  { time: "09:14:36", text: "Potrivire automată cu documentele încărcate de clienți: 89% rată de potrivire", kind: "ok" },
 ];
 
 // --- Review queue (Screen 4) ---
