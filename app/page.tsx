@@ -92,7 +92,7 @@ function StickyNav() {
         "sticky top-0 z-40 flex items-center justify-between px-6 py-3 transition-colors lg:px-10",
         scrolled
           ? "border-b border-border/50 bg-[hsl(40_30%_98.5%_/_0.88)] backdrop-blur-md"
-          : "bg-transparent"
+          : "bg-transparent",
       )}
     >
       <div className="flex items-center gap-6">
@@ -109,7 +109,10 @@ function StickyNav() {
               {l.label}
             </a>
           ))}
-          <Link href="/demo" className="inline-flex items-center gap-1 text-ink-muted transition-colors hover:text-ink">
+          <Link
+            href="/demo"
+            className="inline-flex items-center gap-1 text-ink-muted transition-colors hover:text-ink"
+          >
             <PlayCircle className="h-3.5 w-3.5" />
             Demo
           </Link>
@@ -141,11 +144,11 @@ function StickyNav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-10 lg:pb-28 lg:pt-20">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-      >
+    <section
+      id="top"
+      className="relative px-4 pb-16 pt-10 sm:px-6 sm:pb-20 sm:pt-12 lg:px-10 lg:pb-28 lg:pt-20"
+    >
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -right-32 -top-40 h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle,hsl(222_70%_24%_/_0.07),transparent_65%)]" />
         <div className="absolute -left-40 top-80 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,hsl(38_95%_60%_/_0.08),transparent_65%)]" />
       </div>
@@ -172,11 +175,17 @@ function Hero() {
 
           <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-ink-muted sm:text-[17.5px]">
             ContaFlow automatizează tot ce urăști la închiderea lunii —{" "}
-            <strong className="font-semibold text-ink">pull SPV e-Factura</strong>,{" "}
-            <strong className="font-semibold text-ink">OCR și categorizare</strong>,{" "}
-            <strong className="font-semibold text-ink">export Saga</strong>, declarațiile ANAF și
-            SAF-T D406 — pentru orice contabil sau firmă de contabilitate care ține registrele
-            pentru <strong className="font-semibold text-ink">20–150 clienți</strong>.
+            <strong className="font-semibold text-ink">
+              trage din SPV e-Factura
+            </strong>
+            ,{" "}
+            <strong className="font-semibold text-ink">
+              OCR și categorizare
+            </strong>
+            , <strong className="font-semibold text-ink">export Saga</strong>,
+            declarațiile ANAF și SAF-T D406 — pentru orice contabil sau firmă de
+            contabilitate care ține registrele pentru{" "}
+            <strong className="font-semibold text-ink">20–150 clienți</strong>.
           </p>
 
           <div id="pilot" className="mt-7 space-y-3">
@@ -197,8 +206,12 @@ function Hero() {
                 GDPR-compliant
               </span>
               <span>·</span>
-              <Link href="/demo" className="inline-flex items-center gap-1 underline-offset-4 hover:text-ink hover:underline">
-                sau testează demo-ul interactiv <ArrowRight className="h-3 w-3" />
+              <Link
+                href="/demo"
+                className="inline-flex items-center gap-1 underline-offset-4 hover:text-ink hover:underline"
+              >
+                sau testează demo-ul interactiv{" "}
+                <ArrowRight className="h-3 w-3" />
               </Link>
             </div>
           </div>
@@ -273,13 +286,22 @@ function HeroPreview() {
         <div className="flex items-center justify-between border-b border-border/60 bg-white px-4 py-2">
           <div className="flex items-center gap-2">
             <div className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-[hsl(222_70%_24%)] to-[hsl(222_85%_16%)] text-white">
-              <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-3 w-3"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.2}
+                strokeLinecap="round"
+              >
                 <path d="M4 5v14" />
                 <path d="M4 12h8" />
                 <path d="M12 5c4 0 7 2 7 7s-3 7-7 7" />
               </svg>
             </div>
-            <span className="font-serif text-[13px] font-semibold text-ink">ContaFlow</span>
+            <span className="font-serif text-[13px] font-semibold text-ink">
+              ContaFlow
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <span className="rounded-full border border-amber-200/80 bg-amber-50 px-2 py-0.5 text-[9.5px] font-medium text-amber-800">
@@ -317,42 +339,74 @@ function HeroPreview() {
 
           {/* mini KPIs */}
           <div className="grid grid-cols-3 gap-1.5">
-            <MiniKpi icon={<Users className="h-3 w-3" />} label="Clienți lipsă" value="18 / 47" tone="red" />
-            <MiniKpi icon={<Layers className="h-3 w-3" />} label="Docs de procesat" value="394" tone="amber" />
-            <MiniKpi icon={<FileCheck2 className="h-3 w-3" />} label="Declarații" value="9 / 12" tone="amber" />
+            <MiniKpi
+              icon={<Users className="h-3 w-3" />}
+              label="Clienți lipsă"
+              value="18 / 47"
+              tone="red"
+            />
+            <MiniKpi
+              icon={<Layers className="h-3 w-3" />}
+              label="Docs de procesat"
+              value="394"
+              tone="amber"
+            />
+            <MiniKpi
+              icon={<FileCheck2 className="h-3 w-3" />}
+              label="Declarații"
+              value="9 / 12"
+              tone="amber"
+            />
           </div>
 
           {/* mini client table */}
           <div className="overflow-hidden rounded-md border border-border/60 bg-white">
             <div className="flex items-center justify-between border-b border-border/60 bg-[hsl(40_30%_99%)] px-2.5 py-1.5">
-              <span className="text-[10px] font-semibold text-ink-muted">Clienți · top urgențe</span>
+              <span className="text-[10px] font-semibold text-ink-muted">
+                Clienți · top urgențe
+              </span>
               <span className="text-[9.5px] text-ink-subtle">47 total</span>
             </div>
             <div className="divide-y divide-border/50">
               {[
                 { name: "SC TechLogic SRL", status: "Complet", tone: "green" },
-                { name: "Constructii Brîncoveanu SRL", status: "Docs lipsă", tone: "amber" },
-                { name: "Transport Rapid TIR SRL", status: "Necontactat", tone: "red" },
-                { name: "Cafe Ursul Polar SRL", status: "În procesare", tone: "blue" },
+                {
+                  name: "Constructii Brîncoveanu SRL",
+                  status: "Docs lipsă",
+                  tone: "amber",
+                },
+                {
+                  name: "Transport Rapid TIR SRL",
+                  status: "Necontactat",
+                  tone: "red",
+                },
+                {
+                  name: "Cafe Ursul Polar SRL",
+                  status: "În procesare",
+                  tone: "blue",
+                },
               ].map((r) => {
                 const dot =
                   r.tone === "green"
                     ? "bg-emerald-500"
                     : r.tone === "amber"
-                    ? "bg-amber-500"
-                    : r.tone === "red"
-                    ? "bg-rose-500"
-                    : "bg-sky-500";
+                      ? "bg-amber-500"
+                      : r.tone === "red"
+                        ? "bg-rose-500"
+                        : "bg-sky-500";
                 const text =
                   r.tone === "green"
                     ? "text-emerald-700"
                     : r.tone === "amber"
-                    ? "text-amber-700"
-                    : r.tone === "red"
-                    ? "text-rose-700"
-                    : "text-sky-700";
+                      ? "text-amber-700"
+                      : r.tone === "red"
+                        ? "text-rose-700"
+                        : "text-sky-700";
                 return (
-                  <div key={r.name} className="flex items-center justify-between px-2.5 py-1.5 text-[11px]">
+                  <div
+                    key={r.name}
+                    className="flex items-center justify-between px-2.5 py-1.5 text-[11px]"
+                  >
                     <span className="truncate text-ink">{r.name}</span>
                     <span className="inline-flex items-center gap-1">
                       <span className={cn("h-1.5 w-1.5 rounded-full", dot)} />
@@ -383,7 +437,9 @@ function HeroPreview() {
             <CheckCircle2 className="h-3.5 w-3.5" />
           </div>
           <div>
-            <div className="text-[11px] font-semibold text-ink">1.233 / 1.247</div>
+            <div className="text-[11px] font-semibold text-ink">
+              1.233 / 1.247
+            </div>
             <div className="text-[9.5px] text-ink-subtle">automate · 98,9%</div>
           </div>
         </div>
@@ -407,15 +463,20 @@ function MiniKpi({
     tone === "red"
       ? "text-rose-700"
       : tone === "amber"
-      ? "text-amber-800"
-      : "text-sky-700";
+        ? "text-amber-800"
+        : "text-sky-700";
   return (
     <div className="rounded-md border border-border/60 bg-white p-2">
       <div className="flex items-center gap-1 text-[9px] font-semibold uppercase tracking-wide text-ink-subtle">
         {icon}
         {label}
       </div>
-      <div className={cn("mt-1 font-serif text-[15px] font-medium tabular-nums leading-none", toneClass)}>
+      <div
+        className={cn(
+          "mt-1 font-serif text-[15px] font-medium tabular-nums leading-none",
+          toneClass,
+        )}
+      >
         {value}
       </div>
     </div>
@@ -432,7 +493,14 @@ function SocialProofRibbon() {
           Construit de oameni care au închis luna manual. De prea multe ori.
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-[12.5px] text-ink-muted">
-          {["Saga", "WinMentor", "Ciel", "SmartBill Conta", "SPV ANAF", "D406 SAF-T"].map((label, i) => (
+          {[
+            "Saga",
+            "WinMentor",
+            "Ciel",
+            "SmartBill Conta",
+            "SPV ANAF",
+            "D406 SAF-T",
+          ].map((label, i) => (
             <span key={label} className="font-serif italic">
               {i > 0 && <span className="mr-5 text-ink-subtle/60">·</span>}
               {label}
@@ -447,11 +515,27 @@ function SocialProofRibbon() {
 /* ---------------- PROBLEM ---------------- */
 
 const PAIN_POINTS = [
-  { icon: MessageCircle, label: "Alergi după clienți pe WhatsApp pentru documente", time: "~6h" },
-  { icon: Download, label: "Descărcare manuală de facturi din SPV · 47 de clienți", time: "~4h" },
+  {
+    icon: MessageCircle,
+    label: "Alergi după clienți pe WhatsApp pentru documente",
+    time: "~6h",
+  },
+  {
+    icon: Download,
+    label: "Descărcare manuală de facturi din SPV · 47 de clienți",
+    time: "~4h",
+  },
   { icon: Wand2, label: "OCR și introducere în Saga", time: "~8h" },
-  { icon: FileText, label: "Categorizare contabilă, document cu document", time: "~6h" },
-  { icon: FileCheck2, label: "D112, D300, D394, D100 și SAF-T D406", time: "~9h" },
+  {
+    icon: FileText,
+    label: "Categorizare contabilă, document cu document",
+    time: "~6h",
+  },
+  {
+    icon: FileCheck2,
+    label: "D112, D300, D394, D100 și SAF-T D406",
+    time: "~9h",
+  },
 ];
 
 function ProblemSection() {
@@ -461,12 +545,14 @@ function ProblemSection() {
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Problema</SectionEyebrow>
           <SectionTitle>
-            A <em className="italic">5-a</em> închidere consecutivă peste weekend.
+            A <em className="italic">5-a</em> închidere consecutivă peste
+            weekend.
           </SectionTitle>
           <SectionLede>
-            Orice contabil cu peste 30 de clienți își recunoaște ritualul: 25 ale lunii se apropie,
-            WhatsApp-ul sună, iar închiderea se întinde pe 3–5 zile. Nu pentru că ai fi încet —
-            ci pentru că instrumentele tale nu vorbesc între ele.
+            Orice contabil cu peste 30 de clienți își recunoaște ritualul: 25
+            ale lunii se apropie, WhatsApp-ul sună, iar închiderea se întinde pe
+            3–5 zile. Nu pentru că ai fi încet — ci pentru că instrumentele tale
+            nu vorbesc între ele.
           </SectionLede>
         </div>
 
@@ -560,14 +646,18 @@ const STEPS = [
 
 function HowItWorksSection() {
   return (
-    <section id="cum-functioneaza" className="bg-[hsl(222_30%_11%)] px-6 py-20 text-[hsl(40_30%_94%)] lg:px-10 lg:py-28">
+    <section
+      id="cum-functioneaza"
+      className="bg-[hsl(222_30%_11%)] px-6 py-20 text-[hsl(40_30%_94%)] lg:px-10 lg:py-28"
+    >
       <div className="mx-auto max-w-[1180px]">
         <div className="mx-auto max-w-2xl text-center">
           <div className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-amber-300">
             Soluția
           </div>
           <h2 className="mt-4 font-serif text-[36px] font-medium leading-[1.05] tracking-tight text-white sm:text-[44px]">
-            5 pași automatizați. <span className="italic text-amber-300">2 ore</span> totale.
+            5 pași automatizați.{" "}
+            <span className="italic text-amber-300">2 ore</span> totale.
           </h2>
           <p className="mt-4 text-[15.5px] leading-relaxed text-white/70">
             ContaFlow face partea mecanică pentru tine — tu păstrezi controlul,
@@ -638,10 +728,10 @@ function InteractiveDemoCta() {
                 Fără demo programat. Fără apel de vânzare.
               </h2>
               <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-muted">
-                Intri pe pielea Mariei Popescu — contabil cu propriul birou, 47 de clienți și 1.247
-                documente de procesat pentru martie. Parcurgi cele 8 pași ai fluxului,
-                click prin click. Te întorci înapoi cu o idee clară dacă ContaFlow te-ar ajuta
-                sau nu.
+                Intri pe pielea Mariei Popescu — contabil cu propriul birou, 47
+                de clienți și 1.247 documente de procesat pentru martie.
+                Parcurgi cele 8 pași ai fluxului, click prin click. Te întorci
+                înapoi cu o idee clară dacă ContaFlow te-ar ajuta sau nu.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -705,7 +795,11 @@ const COMPARISONS = [
     eyebrow: "Integrări",
     headline: "Ei au portal. Noi avem și Saga.",
     body: "TaxDome, Canopy și alte portaluri internaționale îți dau un portal frumos pentru clienți. Dar nu exportă nativ în Saga, WinMentor sau Ciel — programele de contabilitate folosite efectiv de peste 90% din firmele din RO. Rămâi cu dublă introducere.",
-    wins: ["Export Saga / WinMentor / Ciel / SmartBill", "SAF-T D406 cu schema XSD ANAF", "UI 100% în română, cu diacritice"],
+    wins: [
+      "Export Saga / WinMentor / Ciel / SmartBill",
+      "SAF-T D406 cu schema XSD ANAF",
+      "UI 100% în română, cu diacritice",
+    ],
     tone: "primary" as const,
   },
   {
@@ -713,7 +807,11 @@ const COMPARISONS = [
     eyebrow: "Audiență",
     headline: "Alea sunt pentru firma ta. Noi suntem pentru tine.",
     body: "SmartBill, Oblio și FGO sunt construite pentru antreprenor — cel care emite facturi. ContaFlow e primul portal construit de la zero pentru expertul contabil care le ține evidența. Flux, date, jargon, UX — tot gândit din perspectiva ta.",
-    wins: ["Multi-client dashboard", "Auto-pull SPV pentru toți clienții tăi", "Flow de închidere, nu de facturare"],
+    wins: [
+      "Multi-client dashboard",
+      "Auto-tragere SPV pentru toți clienții tăi",
+      "Flow de închidere, nu de facturare",
+    ],
     tone: "amber" as const,
   },
   {
@@ -721,7 +819,11 @@ const COMPARISONS = [
     eyebrow: "Status quo",
     headline: '„Noi facem asta de 15 ani așa".',
     body: "SPV-ul șterge facturile după 60 de zile. Manual, nimeni nu descarcă consistent pentru 47 de clienți. Saga și WinMentor nu vorbesc cu SPV. Rezultatul: 33h de muncă mecanică care îți mănâncă weekenduri. Nu e eficiență — e rutină.",
-    wins: ["Arhivare permanentă a e-Factura", "Fără pierdere de date fiscale", "Weekend-urile înapoi acasă"],
+    wins: [
+      "Arhivare permanentă a e-Factura",
+      "Fără pierdere de date fiscale",
+      "Weekend-urile înapoi acasă",
+    ],
     tone: "emerald" as const,
   },
 ];
@@ -733,7 +835,8 @@ function DifferentiatorsSection() {
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Diferențiatorii</SectionEyebrow>
           <SectionTitle>
-            Nu mai e încă un SaaS. <em className="italic">E un portal RO, pentru contabilul RO.</em>
+            Nu mai e încă un SaaS.{" "}
+            <em className="italic">E un portal RO, pentru contabilul RO.</em>
           </SectionTitle>
         </div>
 
@@ -743,32 +846,41 @@ function DifferentiatorsSection() {
               c.tone === "primary"
                 ? "border-primary/15 from-primary/[0.04] text-primary"
                 : c.tone === "amber"
-                ? "border-amber-200/60 from-amber-500/[0.06] text-amber-800"
-                : "border-emerald-200/60 from-emerald-500/[0.06] text-emerald-800";
+                  ? "border-amber-200/60 from-amber-500/[0.06] text-amber-800"
+                  : "border-emerald-200/60 from-emerald-500/[0.06] text-emerald-800";
             return (
               <div
                 key={c.label}
                 className={cn(
                   "relative flex flex-col overflow-hidden rounded-2xl border bg-white p-6 shadow-[0_10px_30px_-20px_hsl(222_30%_14%/0.15)]",
-                  accent.split(" ")[0]
+                  accent.split(" ")[0],
                 )}
               >
                 <div
                   aria-hidden
                   className={cn(
                     "absolute inset-0 bg-gradient-to-b to-transparent opacity-60",
-                    accent.split(" ")[1]
+                    accent.split(" ")[1],
                   )}
                 />
                 <div className="relative">
-                  <div className={cn("text-[10.5px] font-semibold uppercase tracking-[0.12em]", accent.split(" ")[2])}>
+                  <div
+                    className={cn(
+                      "text-[10.5px] font-semibold uppercase tracking-[0.12em]",
+                      accent.split(" ")[2],
+                    )}
+                  >
                     {c.eyebrow}
                   </div>
-                  <div className="mt-1 text-[11px] font-medium text-ink-subtle">{c.label}</div>
+                  <div className="mt-1 text-[11px] font-medium text-ink-subtle">
+                    {c.label}
+                  </div>
                   <h3 className="mt-4 font-serif text-[22px] font-medium leading-tight text-ink">
                     {c.headline}
                   </h3>
-                  <p className="mt-3 text-[13px] leading-relaxed text-ink-muted">{c.body}</p>
+                  <p className="mt-3 text-[13px] leading-relaxed text-ink-muted">
+                    {c.body}
+                  </p>
                   <ul className="mt-5 space-y-1.5 text-[12.5px] text-ink">
                     {c.wins.map((w) => (
                       <li key={w} className="flex items-start gap-2">
@@ -802,11 +914,16 @@ const INTEGRATIONS = [
 
 function IntegrationsSection() {
   return (
-    <section id="integrari" className="border-y border-border/60 bg-white/60 px-6 py-16 lg:px-10">
+    <section
+      id="integrari"
+      className="border-y border-border/60 bg-white/60 px-6 py-16 lg:px-10"
+    >
       <div className="mx-auto max-w-[1180px]">
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Integrări</SectionEyebrow>
-          <SectionTitle>Vorbim cu toate instrumentele cu care lucrezi deja.</SectionTitle>
+          <SectionTitle>
+            Vorbim cu toate instrumentele cu care lucrezi deja.
+          </SectionTitle>
         </div>
 
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -851,18 +968,22 @@ function TestimonialSection() {
             <Quote className="h-16 w-16 text-amber-300/70" />
             <div>
               <p className="font-serif text-[22px] italic leading-snug text-white md:text-[28px]">
-                „Prima dată când n-am mai stat trei zile peste weekend să închei luna. Clienții
-                trimit documentele direct prin WhatsApp, facturile vin automat din SPV — efectiv
-                îmi dă înapoi seară de seară."
+                „Prima dată când n-am mai stat trei zile peste weekend să închei
+                luna. Clienții trimit documentele direct prin WhatsApp,
+                facturile vin automat din SPV — efectiv îmi dă înapoi seară de
+                seară."
               </p>
               <div className="mt-5 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 to-amber-500 text-[13px] font-semibold text-white">
                   MP
                 </div>
                 <div>
-                  <div className="text-[13.5px] font-semibold text-white">Maria Popescu</div>
+                  <div className="text-[13.5px] font-semibold text-white">
+                    Maria Popescu
+                  </div>
                   <div className="text-[11.5px] text-white/60">
-                    Contabil, firmă proprie · beta user · 47 de clienți · Cluj-Napoca
+                    Contabil, firmă proprie · beta user · 47 de clienți ·
+                    Cluj-Napoca
                   </div>
                 </div>
               </div>
@@ -939,11 +1060,12 @@ function PricingSection() {
         <div className="mx-auto max-w-2xl text-center">
           <SectionEyebrow>Prețuri</SectionEyebrow>
           <SectionTitle>
-            <em className="italic">Se plătește singur</em> în prima dimineață de aprilie.
+            <em className="italic">Se plătește singur</em> în prima dimineață de
+            aprilie.
           </SectionTitle>
           <SectionLede>
-            Prețurile sunt pentru firma de contabilitate, nu per client final. Prima lună e
-            gratuită, setup-ul inclus, migrarea datelor e asistată.
+            Prețurile sunt pentru firma de contabilitate, nu per client final.
+            Prima lună e gratuită, setup-ul inclus, migrarea datelor e asistată.
           </SectionLede>
         </div>
 
@@ -955,7 +1077,7 @@ function PricingSection() {
                 "rounded-full px-4 py-1.5 font-medium transition-colors",
                 billing === "monthly"
                   ? "bg-primary text-primary-foreground"
-                  : "text-ink-muted"
+                  : "text-ink-muted",
               )}
             >
               Lunar
@@ -966,10 +1088,17 @@ function PricingSection() {
                 "rounded-full px-4 py-1.5 font-medium transition-colors",
                 billing === "annual"
                   ? "bg-primary text-primary-foreground"
-                  : "text-ink-muted"
+                  : "text-ink-muted",
               )}
             >
-              Anual <span className={billing === "annual" ? "text-amber-300" : "text-emerald-700"}>−20%</span>
+              Anual{" "}
+              <span
+                className={
+                  billing === "annual" ? "text-amber-300" : "text-emerald-700"
+                }
+              >
+                −20%
+              </span>
             </button>
           </div>
         </div>
@@ -985,7 +1114,7 @@ function PricingSection() {
                   "relative flex flex-col overflow-hidden rounded-2xl border bg-white p-6 transition-all",
                   p.highlight
                     ? "border-primary bg-gradient-to-br from-white via-white to-primary/[0.04] shadow-[0_20px_50px_-24px_hsl(222_70%_24%/0.35)]"
-                    : "border-border/70"
+                    : "border-border/70",
                 )}
               >
                 {p.highlight && (
@@ -1010,7 +1139,7 @@ function PricingSection() {
                       <CheckCircle2
                         className={cn(
                           "mt-0.5 h-3.5 w-3.5 shrink-0",
-                          p.highlight ? "text-primary" : "text-emerald-600"
+                          p.highlight ? "text-primary" : "text-emerald-600",
                         )}
                       />
                       <span className="text-ink-muted">{f}</span>
@@ -1024,7 +1153,7 @@ function PricingSection() {
                     "mt-7 h-11 w-full rounded-lg",
                     p.highlight
                       ? "bg-[hsl(222_70%_18%)] hover:bg-[hsl(222_75%_22%)]"
-                      : "bg-white text-primary ring-1 ring-primary/30 hover:bg-primary/5"
+                      : "bg-white text-primary ring-1 ring-primary/30 hover:bg-primary/5",
                   )}
                 >
                   <a href="#pilot-full">
@@ -1043,15 +1172,18 @@ function PricingSection() {
           </span>
           <span className="text-border">·</span>
           <span className="inline-flex items-center gap-1">
-            <Check className="h-3 w-3 text-emerald-600" /> Setup & migrare incluse
+            <Check className="h-3 w-3 text-emerald-600" /> Setup & migrare
+            incluse
           </span>
           <span className="text-border">·</span>
           <span className="inline-flex items-center gap-1">
-            <Check className="h-3 w-3 text-emerald-600" /> Anulare oricând, fără costuri
+            <Check className="h-3 w-3 text-emerald-600" /> Anulare oricând, fără
+            costuri
           </span>
           <span className="text-border">·</span>
           <span className="inline-flex items-center gap-1">
-            <ShieldCheck className="h-3 w-3 text-emerald-600" /> Date găzduite în UE (Frankfurt)
+            <ShieldCheck className="h-3 w-3 text-emerald-600" /> Date găzduite
+            în UE (Frankfurt)
           </span>
         </div>
       </div>
@@ -1095,7 +1227,10 @@ const FAQ = [
 function FaqSection() {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   return (
-    <section id="faq" className="border-y border-border/60 bg-white/60 px-6 py-20 lg:px-10 lg:py-24">
+    <section
+      id="faq"
+      className="border-y border-border/60 bg-white/60 px-6 py-20 lg:px-10 lg:py-24"
+    >
       <div className="mx-auto max-w-[980px]">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
           <div>
@@ -1130,7 +1265,7 @@ function FaqSection() {
                     <ChevronDown
                       className={cn(
                         "h-4 w-4 shrink-0 text-ink-subtle transition-transform duration-200",
-                        isOpen && "rotate-180"
+                        isOpen && "rotate-180",
                       )}
                     />
                   </button>
@@ -1177,21 +1312,25 @@ function FinalCtaSection() {
               </h2>
               <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-white/70">
                 Înscrie-te în pilotul beta — primele 30 de firme primesc{" "}
-                <strong className="text-white">preț fixat la €49/lună</strong> pe viață, onboarding
-                personal cu fondatorul și migrare asistată din Saga.
+                <strong className="text-white">preț fixat la €49/lună</strong>{" "}
+                pe viață, onboarding personal cu fondatorul și migrare asistată
+                din Saga.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-4 text-[12px] text-white/60">
                 <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" /> Prima lună gratuită
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />{" "}
+                  Prima lună gratuită
                 </span>
                 <span>·</span>
                 <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" /> Zero spam
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" /> Zero
+                  spam
                 </span>
                 <span>·</span>
                 <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" /> Anulare oricând
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />{" "}
+                  Anulare oricând
                 </span>
               </div>
             </div>
@@ -1219,21 +1358,32 @@ function Footer() {
         <div>
           <Logo />
           <p className="mt-3 max-w-sm text-[12.5px] leading-relaxed text-ink-muted">
-            Portalul contabilului român. Construit pentru orice contabil — CECCAR, CCF, PFA sau birou propriu —
-            care vrea să-și revendice weekend-urile.
+            Portalul contabilului român. Construit pentru orice contabil —
+            CECCAR, CCF, PFA sau birou propriu — care vrea să-și revendice
+            weekend-urile.
           </p>
           <div className="mt-4 space-y-1 text-[11.5px] text-ink-subtle">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <a href="mailto:contact@archdevs.org" className="inline-flex items-center gap-1 hover:text-ink">
+              <a
+                href="mailto:contact@archdevs.org"
+                className="inline-flex items-center gap-1 hover:text-ink"
+              >
                 <Mail className="h-3 w-3" /> contact@archdevs.org
               </a>
               <span>·</span>
-              <a href="https://archdevs.org" target="_blank" rel="noopener noreferrer" className="hover:text-ink">
+              <a
+                href="https://archdevs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-ink"
+              >
                 archdevs.org
               </a>
             </div>
             <div>
-              Un produs <strong className="font-semibold text-ink">ARCHDEVS SRL</strong> · Pitești, România
+              Un produs{" "}
+              <strong className="font-semibold text-ink">ARCHDEVS SRL</strong> ·
+              Pitești, România
             </div>
           </div>
         </div>
@@ -1257,14 +1407,20 @@ function Footer() {
         </div>
       </div>
       <div className="mx-auto mt-8 max-w-[1180px] border-t border-border/60 pt-5 text-center text-[11px] text-ink-subtle">
-        © {new Date().getFullYear()} ARCHDEVS SRL · ContaFlow este marcă în pregătire ·
-        Toate drepturile rezervate
+        © {new Date().getFullYear()} ARCHDEVS SRL · ContaFlow este marcă în
+        pregătire · Toate drepturile rezervate
       </div>
     </footer>
   );
 }
 
-function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
+function FooterCol({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex flex-col gap-1.5">
       <div className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-ink-subtle">
